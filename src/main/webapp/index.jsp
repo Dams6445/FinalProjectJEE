@@ -3,11 +3,14 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+    <body>
+    <div class="banniere">
+    </div>
+    <h1><%= "Hello World!" %>
+    </h1>
+    <br/>
+    <a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>

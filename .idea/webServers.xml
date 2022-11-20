@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d7caf1ad-2e53-4b78-b707-51aeb18afef7" name="Tomcat" url="http://localhost:8080/FinalProjectJEE-1.0-SNAPSHOT/">
+        <fileTransfer accessType="LOCAL" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
