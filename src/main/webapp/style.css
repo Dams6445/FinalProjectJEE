@@ -6,10 +6,15 @@ body{
 }
 
 /* Header style */
-#banner
+#banniereAccueil
 {
-    height: 150px;
+    height: 30px;
     width:100%;
-    background: url("https://img.freepik.com/vecteurs-libre/banniere-equipement-sport_1284-32611.jpg?w=1800&t=st=1668963050~exp=1668963650~hmac=52f4cc37c200e5d6b16e8c8cbe0562bffb8d099b362d2be894bc40594a7d644a");
-    background-size: cover;
+}
+
+/* Footer style */
+#footer
+{
+    background-color: gainsboro;
+    text-align: center;
 }
