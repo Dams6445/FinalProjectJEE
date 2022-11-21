@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="FinalProjectJEE-1.0-SNAPSHOT.war">
+    <root id="archive" name="tpWEBHibernateHBM.war">
       <element id="artifact" artifact-name="FinalProjectJEE:war exploded" />
     </root>
   </artifact>

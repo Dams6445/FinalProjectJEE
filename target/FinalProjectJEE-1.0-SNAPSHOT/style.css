@@ -1,0 +1,20 @@
+/* Genreral style */
+body{
+    margin: 0;
+    border: 0;
+    width: 100%;
+}
+
+/* Header style */
+#banniereAccueil
+{
+    height: 30px;
+    width:100%;
+}
+
+/* Footer style */
+#footer
+{
+    background-color: gainsboro;
+    text-align: center;
+}

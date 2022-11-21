@@ -6,22 +6,22 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div id="banniereAccueil"></div>
-
-<hr>
-
-<h1 class="title">Hello World!</h1>
-
-<br/>
-
-<div id="logoAccueil">
+    <div id="banniereAccueil"></div>
 
     <hr>
 
-</div>
+    <h1 class="title">Hello World!</h1>
 
-<a href="hello-servlet">Hello Servlet</a>
+    <br/>
 
-<jsp:include page="footer.jsp"></jsp:include>
+    <div id="logoAccueil">
+
+    <hr>
+
+    </div>
+
+    <a href="hello-servlet">Hello Servlet</a>
+
+    <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
