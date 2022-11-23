@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
@@ -15,6 +14,5 @@
     <jsp:include page="footer.jsp"></jsp:include>
     <br/>
     <a href="hello-servlet">Hello Servlet</a>
-    <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
 </body>
 </html>

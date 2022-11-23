@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>

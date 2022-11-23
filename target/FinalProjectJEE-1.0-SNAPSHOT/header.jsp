@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./style.css">
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
     <div class="container-fluid">
         <div class="container">

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Produits</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
