@@ -7,8 +7,8 @@
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/> <!--Driver à utiliser -->
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost/jee"/> <!--URL de ma BDD -->
-            <property name="javax.persistence.jdbc.user" value="bauluevan"/>
-            <property name="javax.persistence.jdbc.password" value="7Aout2001"/>
+            <property name="javax.persistence.jdbc.user" value="cyril"/>
+            <property name="javax.persistence.jdbc.password" value="Fkfwp222^^"/>
             <property name="dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.hbm2ddl.import_files" value="sql/import-users.sql"/>
