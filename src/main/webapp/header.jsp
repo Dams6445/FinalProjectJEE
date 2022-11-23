@@ -50,5 +50,4 @@
     </header>
 </div>
 
-<script type="text/javascript" src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </html>
