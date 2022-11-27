@@ -1,0 +1,38 @@
+@import "bootstrap.css";
+
+/* Genreral style */
+body{
+    margin: 0;
+    border: 0;
+    width: 100%;
+}
+
+/* Header style */
+#banniereAccueil {
+    height: 40px;
+    display: flex;
+    padding-top: 15px;
+}
+
+#titre {
+    font-family: "SummerHearts-Regular";
+    font-size: 33px;
+    letter-spacing: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+#spanAccueil {
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+/* Footer style */
+#footer {
+    background-color: gainsboro;
+    text-align: center;
+}
+
+.footerLink{
+    border: 10px;
+}
