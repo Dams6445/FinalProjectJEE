@@ -2,9 +2,10 @@
 <html>
 <head>
     <title>Produits</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <jsp:include page="header.jsp"></jsp:include>
 
     <h1>Produits</h1>
 
