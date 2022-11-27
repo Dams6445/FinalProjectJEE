@@ -36,14 +36,16 @@
         <li class="border-top my-3"></li>
         <li class="mb-1">
             <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                Account
+                Gestion
             </button>
             <div class="collapse" id="account-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                    <li><a href="./ajouterProduit.jsp" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter un produit</a></li>
+                    <li><a href="./supprimerProduit.jsp" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer un produit</a></li>
+                    <li><a href="./modifierProduit.jsp" class="link-dark d-inline-flex text-decoration-none rounded">Modifier un produit</a></li>
+                    <li class="border-top my-1"></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lier des produits</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer le lien de produits</a></li>
                 </ul>
             </div>
         </li>
