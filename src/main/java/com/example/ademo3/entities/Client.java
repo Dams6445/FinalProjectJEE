@@ -1,4 +1,4 @@
-package com.example.ademo3.entities;
+/*package com.example.ademo3.entities;
 
 import javax.persistence.*;
 
@@ -59,4 +59,4 @@ public class Client {
     public void setMotDePasse(String motDePasse) {
         MotDePasse = motDePasse;
     }
-}
+}*/

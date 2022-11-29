@@ -1,20 +1,34 @@
 package com.example.ademo3.entities;
 
+import org.hibernate.type.ImageType;
+
 import javax.persistence.*;
 
 @Entity
+@Table(name = "categorie")
 public class Categorie {
+
     @Id
+    @Column(name = "categorie_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id_categorie;
+    public int categorie_id;
+
+    @Column(name = "categorie_nom")
     private String nom;
 
+    @Column(name = "categorie_image")
+    private ImageType image;
+
+    /////////////////////////////
+    //////GETTER AND SETTER//////
+    /////////////////////////////
+
     public long getId_categorie() {
-        return id_categorie;
+        return categorie_id;
     }
 
-    public void setId_categorie(long id_categorie) {
-        this.id_categorie = id_categorie;
+    public void setId_categorie(int id_categorie) {
+        this.categorie_id = id_categorie;
     }
 
     public String getNom() {
@@ -24,4 +38,13 @@ public class Categorie {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    public ImageType getImage() {
+        return image;
+    }
+
+    public void setImage(ImageType nom) {
+        this.image = image;
+    }
+
 }

@@ -1,18 +1,49 @@
 package com.example.ademo3.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.type.ImageType;
+import org.hibernate.type.StringNVarcharType;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "produit")
 public class Produit {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+
+    //TODO Utiliser thymleaf pour afficher dans html
+    @Id
+    @Column(name = "produit_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name = "produit_reference")
+    private String reference;
+
+    @Column(name = "produit_nom")
     private String nom;
-    private String prix;
-    private String categorie;
-    private int annee_sortie;
+
+    @Column(name = "produit_prix")
+    private Float prix;
+
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    private Categorie categorie;
+
+    @Column(name = "produit_description")
+    private StringNVarcharType description;
+
+    @Column(name = "produit_image")
+    private ImageType image;
+
+    /*public Produit(String reference, String nom, Float prix, Categorie categorie ){
+        this.reference = reference;
+        this.nom = nom;
+        this.prix = prix;
+        this.categorie = categorie;
+    }*/
+
+    /////////////////////////////
+    //////GETTER AND SETTER//////
+    /////////////////////////////
 
     public int getId() {
         return id;
@@ -22,6 +53,10 @@ public class Produit {
         this.id = id;
     }
 
+    public String getReference() { return reference; }
+
+    public void setReference(String reference) { this.reference = reference; }
+
     public String getNom() {
         return nom;
     }
@@ -30,29 +65,30 @@ public class Produit {
         this.nom = nom;
     }
 
-    public String getPrix() {
+    public Float getPrix() {
         return prix;
     }
 
-    public void setPrix(String prix) {
+    public void setPrix(Float prix) {
         this.prix = prix;
     }
 
-    public String getCategorie() {
-        return categorie;
+    public Categorie getCategorie() { return categorie; }
+
+    public void setCategorie(Categorie categorie) { this.categorie = categorie; }
+
+    public StringNVarcharType getDescription() {
+        return description;
     }
 
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
+    public void setDescription(StringNVarcharType annee_sortie) { this.description = annee_sortie; }
+
+    public ImageType getImage() {
+        return image;
     }
 
-    public int getAnnee_sortie() {
-        return annee_sortie;
+    public void setImage(ImageType nom) {
+        this.image = image;
     }
-
-    public void setAnnee_sortie(int annee_sortie) {
-        this.annee_sortie = annee_sortie;
-    }
-
 
 }
