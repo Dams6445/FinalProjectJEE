@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Supprimer Produit - Sadida</title>
+    <title>Modifier Produits - Sadida</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -20,8 +20,19 @@
     <!--Container Main start-->
     <div class="col">
         <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
-            <div class="col-md-5 p-lg-5 mx-auto my-5">
-                <h1 class="display-4 pb-5 fw-normal">Supprimer un produit</h1>
+            <div class="p-lg-5 mx-auto my-5">
+                <h1 class="display-4 pb-5 fw-normal">Modifier les produits</h1>
+                <h5 class="col-1" style="text-align: left">Filtre</h5>
+                <select id="categories" required="" style="width: 300px" class="col-1 pr-auto mb-5 form-select">
+                    <option>Sport</option>
+                    <option>Lifestyle</option>
+                    <option>Chill</option>
+                    <option disabled>------------</option>
+                    <option>all</option>
+                </select>
+                <div class="invalid-feedback">
+                    Veuillez sélectionner une catégorie valide.
+                </div>
                 <form>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
@@ -30,6 +41,7 @@
                                 <th scope="col">Référence</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Catégorie</th>
+                                <th scope="col">Type de produit</th>
                                 <th scope="col">Prix</th>
                                 <th scope="col">Description</th>
                             </tr>
@@ -38,114 +50,35 @@
                             <tr>
                                 <td><input name="ref0" type="text" value="AZ-452"></input></td>
                                 <td><input name="nom0" type="text" value="One Force Air"></input></td>
+                                <td>
+                                    <select id="categories" required>
+                                        <option>Sport</option>
+                                        <option>Lifestyle</option>
+                                        <option>Chill</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Veuillez sélectionner une catégorie valide.
+                                    </div>
+                                </td>
                                 <td><input name="cat0" type="text" value="Lifestyle"></input></td>
                                 <td><input name="prix0" type="text" value="150"></input></td>
                                 <td><textarea name="d0" type="text" placeholder="Le charme continue d'opérer avec la One Force Air. Cette silhouette emblématique du basketball apporte un nouveau souffle à ses éléments les plus remarquables : le cuir impeccable, les couleurs vives et juste ce qu'il faut d'éclat pour vous faire briller."></textarea></td>
                             </tr>
                             <tr>
-                                <td>1,002</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,004</td>
-                                <td>text</td>
-                                <td>random</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,005</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>1,006</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,007</td>
-                                <td>placeholder</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>irrelevant</td>
-                            </tr>
-                            <tr>
-                                <td>1,008</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,009</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,010</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,011</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,012</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,013</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>visual</td>
-                            </tr>
-                            <tr>
-                                <td>1,014</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,015</td>
-                                <td>random</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>text</td>
+                                <td><input name="ref0" type="text" value="AZ-452"></input></td>
+                                <td><input name="nom0" type="text" value="One Force Air"></input></td>
+                                <td>
+                                    <select id="categories" required>
+                                        <option>Sport</option>
+                                        <option>Lifestyle</option>
+                                        <option>Chill</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Veuillez sélectionner une catégorie valide.
+                                    </div></td>
+                                <td><input name="cat0" type="text" value="Lifestyle"></input></td>
+                                <td><input name="prix0" type="text" value="150"></input></td>
+                                <td><textarea name="d0" type="text" placeholder="Le charme continue d'opérer avec la One Force Air. Cette silhouette emblématique du basketball apporte un nouveau souffle à ses éléments les plus remarquables : le cuir impeccable, les couleurs vives et juste ce qu'il faut d'éclat pour vous faire briller."></textarea></td>
                             </tr>
                             </tbody>
                         </table>

@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Accueil - Sadida</title>
+    <title>Sadida - Accueil</title>
+    <link rel="icon" href="Pictures/favicon_io/favicon.ico" type="image/sadidaIcon">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -13,29 +14,75 @@
         </div>
         <!--Container Main start-->
         <div class="col">
-            <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-                <div class="col-md-5 p-lg-5 mx-auto my-5">
-                    <h1 class="display-4 fw-normal">Punny headline</h1>
-                    <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-                    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+            <div class="position-relative overflow-hidden p-3 p-md-4 m-md-3 text-center bg-light">
+                <div class="col-md-6 p-lg-5 mx-auto my-5">
+                    <h1 class="display-4 fw-normal pb-4">Noël approche !</h1>
+                    <p class="lead fw-normal pb-2">N'attendez pas le dernier moment, FONCEZ en magasins !</p>
+                    <a class="btn btn-outline-secondary " href="#">Shop Vetements</a>
+                    <a class="btn btn-outline-secondary" href="#">Shop Chaussures</a>
+                    <a class="btn btn-outline-secondary" href="#">Shop Accessoires</a>
+                    <a class="btn btn-outline-secondary" href="#">Shop Equipements</a>
                 </div>
                 <div class="product-device shadow-sm d-none d-md-block"></div>
                 <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
             </div>
             <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="fw-light">Album example</h1>
-                        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                        </p>
+                <div class="container px-4 py-5" id="custom-cards">
+                    <h2 class="pb-4 border-bottom">Custom cards</h2>
+
+                    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" style="height: 514px;">
+                        <div class="col">
+                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./Pictures/hoddie.png');">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Détente</h3>
+                                    <ul class="d-flex list-unstyled mt-auto">
+                                        <li class="me-auto">
+                                            <img src="./Pictures/sadida_LOGO_avecBG_carre.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            <a href="#" class="btn btn-primary my-2">Voir</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./Pictures/yeezy.png');">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Lifestyle</h3>
+                                    <ul class="d-flex list-unstyled mt-auto">
+                                        <li class="me-auto">
+                                            <img src="./Pictures/sadida_LOGO_avecBG_carre.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            <a href="#" class="btn btn-primary my-2">Voir</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('./Pictures/sacDeFrappe.png');">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Sport</h3>
+                                    <ul class="d-flex list-unstyled mt-auto">
+                                        <li class="me-auto">
+                                            <img src="./Pictures/sadida_LOGO_avecBG_carre.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            <a href="#" class="btn btn-primary my-2">Voir</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <div class="album py-5 bg-light">
+            <!--<div class="album py-5 bg-light">
                 <div class="container">
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -187,7 +234,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --->
         </div>
     </div>
     </h1>

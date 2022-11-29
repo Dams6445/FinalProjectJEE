@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Ajouter Produit - Sadida</title>
+    <link rel="icon" href="Pictures/favicon_io/favicon.ico" type="image/sadidaIcon">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
