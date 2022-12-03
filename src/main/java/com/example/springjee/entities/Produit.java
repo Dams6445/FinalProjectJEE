@@ -28,7 +28,7 @@ public class Produit {
     private Categorie categorie;
 
     @ManyToOne
-    @JoinColumn(name = "typeProduit",nullable = false)
+    @JoinColumn(name = "typeProduit",nullable = true)
     private TypeProduit typeProduit;
 
     @Column(name = "produit_description")
