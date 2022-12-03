@@ -9,4 +9,6 @@ public class ProduitService {
 
     @Autowired
     ProduitRepository produitRepository;
+
+    public void deleteProduitByNom(String nom) { produitRepository.delete(produitRepository.findProduitByNom(nom));}
 }

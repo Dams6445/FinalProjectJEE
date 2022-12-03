@@ -16,9 +16,16 @@
                     <div class="row g-3">
 
 
-                        <form action="#" th:action="@{/supprimerProduit}" th:object="${categorie}" method="post">
+                        <form action="#" th:action="@{/supprimerCategorie}" th:object="${categorie}" method="post">
 
                             <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+
+                            <p><input type="submit" value="Submit"/></p>
+                        </form>
+
+                        <form action="#" th:action="@{/supprimerProduit}" th:object="${produit}" method="post">
+
+                            <p>Nom du produit <input type=text th:field="${produit.nom}" class="form_entré"/></p>
 
                             <p><input type="submit" value="Submit"/></p>
                         </form>

@@ -1,6 +1,7 @@
 package com.example.springjee.controller;
 
 import com.example.springjee.entities.Categorie;
+import com.example.springjee.entities.Produit;
 import com.example.springjee.service.CategorieService;
 import com.example.springjee.service.ProduitService;
 import com.example.springjee.service.TypeProduitService;
@@ -21,6 +22,11 @@ class DeleteController {
         return new Categorie();
     }
 
+    @ModelAttribute("produit")
+    public Produit produit() {
+        return new Produit();
+    }
+
     @Autowired
     CategorieService categorieService;
 
@@ -31,18 +37,25 @@ class DeleteController {
     TypeProduitService typeProduitService;
 
 
-    @GetMapping("/supprimerProduit")
+    @GetMapping("/supprimer")
     public String displayDelete(Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories",categories);
-        return "supprimerProduit";
+        return "supprimer";
     }
 
-    @PostMapping("/supprimerProduit")
+    @PostMapping("/supprimerCategorie")
     public String deleteCategorie(@ModelAttribute Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
         categorieService.deleteCategorieByNom(categorie.getNom());
-        return "supprimerProduit";
+        return "supprimer";
+    }
+
+    @PostMapping("/supprimerProduit")
+    public String deleteProduit(@ModelAttribute Produit produit, Model model){
+        model.addAttribute("produit",produit);
+        produitService.deleteProduitByNom(produit.getNom());
+        return "supprimer";
     }
 
 }
