@@ -19,7 +19,8 @@ public class TypeProduit {
     @Column(name = "typeProduit_nom", nullable = false)
     private String nom;
 
-    /* @ManyToMany
+    /*
+    @ManyToMany
     @JoinTable(name = "categorie_typeProduit",
             joinColumns = @JoinColumn(name = "typeProduit_id", referencedColumnName="typeProduit_id"),
             inverseJoinColumns = @JoinColumn(name = "categorie_id", referencedColumnName="categorie_id"))
@@ -54,10 +55,11 @@ public class TypeProduit {
 
     public void setNom(String nom) { this.nom = nom; }
 
-    //public List<Categorie> getCategorie() { return categorie; }
+    /*
+    public List<Categorie> getCategorie() { return categorie; }
 
-    //public void setCategorie(List<Categorie> categorie) { this.categorie = categorie; }
-
+    public void setCategorie(List<Categorie> categorie) { this.categorie = categorie; }
+    */
 
 }
 

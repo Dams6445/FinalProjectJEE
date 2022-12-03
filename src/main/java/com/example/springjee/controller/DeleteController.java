@@ -22,6 +22,11 @@ class DeleteController {
         return new Categorie();
     }
 
+    @ModelAttribute("produit")
+    public Produit produit() {
+        return new Produit();
+    }
+
     @Autowired
     CategorieService categorieService;
 
@@ -48,8 +53,9 @@ class DeleteController {
 
     @PostMapping("/supprimerProduit")
     public String deleteProduit(@ModelAttribute Produit produit, Model model){
-        model.addAttribute("produit", produit);
+        model.addAttribute("produit",produit);
         produitService.deleteProduitByNom(produit.getNom());
         return "supprimer";
     }
+
 }
