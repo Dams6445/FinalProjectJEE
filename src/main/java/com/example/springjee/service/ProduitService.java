@@ -11,4 +11,7 @@ public class ProduitService {
     ProduitRepository produitRepository;
 
     public void deleteProduitByNom(String nom) { produitRepository.delete(produitRepository.findProduitByNom(nom));}
+
+    public void deleteProduitByReference(String reference) { produitRepository.delete(produitRepository.findProduitByReference(reference));}
+
 }

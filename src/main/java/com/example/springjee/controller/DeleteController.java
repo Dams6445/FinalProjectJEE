@@ -51,11 +51,19 @@ class DeleteController {
         return "supprimer";
     }
 
-    @PostMapping("/supprimerProduit")
-    public String deleteProduit(@ModelAttribute Produit produit, Model model){
+    @PostMapping("/supprimerProduitParNom")
+    public String deleteProduitByNom(@ModelAttribute Produit produit, Model model){
         model.addAttribute("produit",produit);
         produitService.deleteProduitByNom(produit.getNom());
         return "supprimer";
     }
+
+    @PostMapping("/supprimerProduitParRef")
+    public String deleteProduitByRef(@ModelAttribute Produit produit, Model model){
+        model.addAttribute("produit", produit);
+        produitService.deleteProduitByReference(produit.getReference());
+        return "supprimer";
+    }
+
 
 }

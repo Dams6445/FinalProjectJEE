@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProduitRepository extends JpaRepository<Produit, Integer> {
 
-    @Query(" SELECT p FROM  Produit p WHERE p.nom LIKE :nomProduit")
+    @Query(" SELECT p FROM  Produit p WHERE p.nom LIKE :nomProduit ")
     Produit findProduitByNom(@Param("nomProduit") String nomProduit);
 
+    @Query(" SELECT p FROM  Produit p WHERE  p.reference LIKE  :referenceProduit ")
+    Produit findProduitByReference(@Param("referenceProduit") String referenceProduit);
 }
