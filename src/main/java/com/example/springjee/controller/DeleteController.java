@@ -5,14 +5,14 @@ import com.example.springjee.entities.Produit;
 import com.example.springjee.entities.Promotion;
 import com.example.springjee.service.CategorieService;
 import com.example.springjee.service.ProduitService;
+import com.example.springjee.service.PromotionService;
 import com.example.springjee.service.TypeProduitService;
-import jdk.jfr.Category;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -42,11 +42,12 @@ class DeleteController {
     @Autowired
     TypeProduitService typeProduitService;
 
+    @Autowired
+    PromotionService promotionService;
+
 
     @GetMapping("/supprimer")
-    public String displayDelete(Model model) {
-        List<Categorie> categories = categorieService.getAllCategories();
-        model.addAttribute("categories",categories);
+    public String displayDelete() {
         return "supprimer";
     }
 
@@ -73,6 +74,8 @@ class DeleteController {
 
     @DeleteMapping("/supprimerPromotion")
     public String deletePromotion(@ModelAttribute Promotion promotion, Model model){
+        model.addAttribute("promotion",promotion);
+        promotionService.deletePromotion(promotion.getNom());
         return "supprimer";
     }
 

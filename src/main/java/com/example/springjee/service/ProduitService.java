@@ -1,8 +1,12 @@
 package com.example.springjee.service;
 
+import com.example.springjee.entities.Categorie;
+import com.example.springjee.entities.Produit;
 import com.example.springjee.repository.ProduitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProduitService {
@@ -14,4 +18,5 @@ public class ProduitService {
 
     public void deleteProduitByReference(String reference) { produitRepository.delete(produitRepository.findProduitByReference(reference));}
 
+    public List<Produit> getProduitByCategorie(Integer idCategorie) { return produitRepository.findProduitByCategorie(idCategorie);}
 }

@@ -12,48 +12,55 @@
     <div class="col">
         <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
             <div class="col-md-5 p-lg-5 mx-auto my-5">
-                <h1 class="display-4 pb-5 fw-normal">Supprimer une catégorie</h1>
-                    <div class="row g-3">
+
+                <h1 class="display-4 pb-5 fw-normal">Rechrcher un produit par catégorie</h1>
+
+                <form action="#" th:action="@{/afficherProduitParCategorie}" th:object="${categorie}" method="post">
+
+                    <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+
+                    <p><input type="submit" value="Submit"/></p>
+                </form>
+
+                <table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Reference</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr th:each="produit : ${produits}">
+                        <td th:text="${produit.id}">ID</td>
+                        <td th:text="${produit.reference}">reference</td>
+                        <td th:text="${produit.nom}">Nom</td>
+                        <td th:text="${produit.prix}">Prix</td>
+                        <td th:text="${produit.description}">Description</td>
+                    </tr>
+                </table>
 
 
-                        <form action="#" th:action="@{/supprimerCategorie}" th:object="${categorie}" method="post">
+                <form action="#" th:action="@{/afficherPromotionParCategorie}" th:object="${categorie}" method="post">
 
-                            <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+                    <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
 
-                            <p><input type="submit" value="Submit"/></p>
-                        </form>
+                    <p><input type="submit" value="Submit"/></p>
+                </form>
 
-                        <hr>
-
-                        <h1 class="display-4 pb-5 fw-normal">Supprimer un produit</h1>
-
-                        <form action="#" th:action="@{/supprimerProduitParNom}" th:object="${produit}" method="post">
-
-                            <span>Nom du produit <input type=text th:field="${produit.nom}" class="form_entré"/></span>
-
-                            <span><input type="submit" value="Submit"/></span>
-                        </form>
-
-                        <hr>
-
-                        <h1 class="display-4 pb-5 fw-normal">Supprimer un produit</h1>
-
-                        <form action="#" th:action="@{/supprimerProduitParRef}" th:object="${produit}" method="post">
-
-                            <span>Reference du produit <input type=text th:field="${produit.reference}" class="form_entré"/></span>
-
-                            <span><input type="submit" value="Submit"/></span>
-                        </form>
-
-                        <h1 class="display-4 pb-5 fw-normal">Supprimer une promotion</h1>
-
-                        <form action="#" th:action="@{/supprimerPromotion}" th:object="${promotion}" method="post">
-
-                            <span>Reference du produit <input type=text th:field="${promotion.nom}" class="form_entré"/></span>
-
-                            <span><input type="submit" value="Submit"/></span>
-                        </form>
-
+                <table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>reduction</th>
+                        <th>Nom Produit</th>
+                    </tr>
+                    <tr th:each="promotion : ${promotions}">
+                        <td th:text="${promotion.id}">ID</td>
+                        <td th:text="${promotion.nom}">Nom</td>
+                        <td th:text="${promotion.reduction}">reduction</td>
+                        <td th:text="${promotion.produit.nom}">Nom produit</td>
+                    </tr>
+                </table>
 
 
                         <!--
