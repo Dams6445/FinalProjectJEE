@@ -18,11 +18,13 @@ public class CategorieService {
         return categorieRepository.findAll();
     }
 
-    public void addCategorie(String nom){
-        categorieRepository.save(new Categorie(nom,null));
+    public void addCategorie(Categorie categorie){
+        categorieRepository.save(new Categorie(categorie.getNom(), null));
     }
 
     public void deleteCategorieByNom(String nom) { categorieRepository.delete(categorieRepository.findCategorieByNom(nom));}
+
+    public void  deleteCategorie(Categorie categorie) { categorieRepository.delete(categorie);}
 
     public Optional<Categorie> getCategorieById(Integer id){
         return categorieRepository.findById(id);

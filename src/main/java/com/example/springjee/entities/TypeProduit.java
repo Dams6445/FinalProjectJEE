@@ -19,13 +19,13 @@ public class TypeProduit {
     @Column(name = "typeProduit_nom", nullable = false)
     private String nom;
 
-    /*
+
     @ManyToMany
     @JoinTable(name = "categorie_typeProduit",
             joinColumns = @JoinColumn(name = "typeProduit_id", referencedColumnName="typeProduit_id"),
             inverseJoinColumns = @JoinColumn(name = "categorie_id", referencedColumnName="categorie_id"))
     private List<Categorie> categorie;
-    */
+
 
     /////////////////////////////
     //////   CONSTRUCTOR   //////

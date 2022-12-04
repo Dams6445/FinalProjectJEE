@@ -24,6 +24,10 @@ public class ProduitService {
 
     public List<Produit> getProduitByPrix(Float prix) { return produitRepository.findProduitByPrix(prix);}
 
+    public void addProduit(Produit produit){
+        produitRepository.save(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), null, null));
+    }
+
     public void deleteProduitByNom(String nom) { produitRepository.delete(produitRepository.findProduitByNom(nom));}
 
     public void deleteProduitByReference(String reference) { produitRepository.delete(produitRepository.findProduitByReference(reference));}

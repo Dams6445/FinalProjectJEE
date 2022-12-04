@@ -33,6 +33,7 @@ public class Promotion {
 
     }
 
+
     public Promotion(String nom, Float reduction, Produit produit){
         this.nom = nom;
         this.reduction = reduction;
@@ -71,6 +72,10 @@ public class Promotion {
     public Produit getCategorie() { return produit; }
 
     public void setCategorie(Produit produit) { this.produit = produit; }
+
+    public Produit getProduit() { return produit; }
+
+    public void setProduit(Produit produit) { this.produit = produit; }
 
 }
 
