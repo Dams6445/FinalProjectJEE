@@ -31,4 +31,6 @@ public class CategorieService {
     public Optional<Categorie> getCategorieById(Integer id){
         return categorieRepository.findById(id);
     }
+
+    public Categorie getCategorieByNom(String nom) { return categorieRepository.findCategorieByNom(nom);}
 }
