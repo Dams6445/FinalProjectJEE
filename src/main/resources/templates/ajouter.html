@@ -21,16 +21,18 @@
                 </form>
 
                     <h1 class="display-4 pb-5 fw-normal">Ajouter un produit</h1>
+
                 <form action="#" th:action="@{/ajouterProduit}" th:object="${produit}" method="post">
                     <p>Reference du produit <input type=text th:field="${produit.reference}" class="form_entré"/></p>
                     <p>Nom du produit <input type=text th:field="${produit.nom}" class="form_entré"/></p>
                     <p>Prix du produit <input type=text th:field="${produit.prix}" class="form_entré"/></p>
-                    <p>Categorie du produit <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+                    <p>Categorie du produit <input type=text th:field="${produit.categorie}" class="form_entré"/></p>
                     <!-- <p>Type du produit <input type=text th:field="${produit.typeProduit}" class="form_entré"/></p> -->
                     <p><input type="submit" value="Submit"/></p>
                 </form>
 
                     <h1 class="display-4 pb-5 fw-normal">Ajouter une promotion</h1>
+
                     <form action="#" th:action="@{/ajouterPromotion}" th:object="${promotion}" method="post">
                         <p>Nom de la promotion <input type=text th:field="${promotion.nom}" class="form_entré"/></p>
                         <p>reduction<input type=text th:field="${promotion.reduction}" class="form_entré"/></p>
