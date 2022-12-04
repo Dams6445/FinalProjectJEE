@@ -13,8 +13,8 @@ public class ProduitService {
     @Autowired
     ProduitRepository produitRepository;
 
-    public void addProduit(String reference, String nom, Float prix, Categorie categorie, TypeProduit typeProduit){
-        produitRepository.save(new Produit(reference, nom, prix, categorie, typeProduit, null, null));
+    public void addProduit(Produit produit){
+        produitRepository.save(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), null, null));
     }
 
     public void deleteProduitByNom(String nom) { produitRepository.delete(produitRepository.findProduitByNom(nom));}

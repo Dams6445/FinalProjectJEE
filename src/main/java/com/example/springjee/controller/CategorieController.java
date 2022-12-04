@@ -21,7 +21,7 @@ public class CategorieController {
         String printCategories = "";
         List<Categorie> categories = categorieService.getAllCategories();
         for (Categorie categorie : categories ) {
-            printCategories += categorie.getId_categorie() +"," + categorie.getNom() + " - ";
+            printCategories += categorie.getId() +"," + categorie.getNom() + " - ";
         }
         model.addAttribute("categories",printCategories);
         return  "index";
