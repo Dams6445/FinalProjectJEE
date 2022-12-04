@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sadida - Accueil</title>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <img class="d-flex align-items-center col-md-1 navbar-brand img-responsive" th:src="@{pictures/sabiba_LOGO_sansBG.png}" alt="logo" >
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="./index.html" class="nav-link px-2 link-dark">Accueil</a></li>
+                    <li><a href="./categories.html" class="nav-link px-2 link-dark">Catégories</a></li>
+                    <li><a href="./produits.html" class="nav-link px-2 link-dark">Produits</a></li>
+                    <li><a href="./about.html" class="nav-link px-2 link-dark">A Propos</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="dropdown text-end">
+                    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="./index.html">Accueil</a></li>
+                        <li><a class="dropdown-item" href="./categories.html">Catégories</a></li>
+                        <li><a class="dropdown-item" href="./produits.html">Produits</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="./about.html">A Propos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+<div class="row">
+    <div class="col-lg-auto">
+        <div class="flex-shrink-0 p-3 bg-white">
+            <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <span class="fs-5 fw-semibold">Navigation</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#categories-collapse" aria-expanded="true">
+                        Categories
+                    </button>
+                    <div class="collapse" id="categories-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sport</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">LifeStyle</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Chill</a></li>
+                            <li class="border-top my-1"></li>
+                            <li><a href="./categories.html" class="link-dark d-inline-flex text-decoration-none rounded">all</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#produits-collapse" aria-expanded="false">
+                        Produits
+                    </button>
+                    <div class="collapse" id="produits-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Vetements</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Chaussures</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Accessoires</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Equipement Sportif</a></li>
+                            <li class="border-top my-1"></li>
+                            <li><a href="./produits.html" class="link-dark d-inline-flex text-decoration-none rounded">all</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                        Gestion
+                    </button>
+                    <div class="collapse" id="account-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <li><a href="./ajouterProduit.html" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter un produit</a></li>
+                            <li><a href="./supprimerProduit.html" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer un produit</a></li>
+                            <li><a href="./modifierProduit.html" class="link-dark d-inline-flex text-decoration-none rounded">Modifier un produit</a></li>
+                            <li class="border-top my-1"></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lier des produits</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Container Main start-->
+    <div class="col">
+        <div class="position-relative overflow-hidden p-3 p-md-4 m-md-3 text-center bg-light">
+            <div class="col-md-6 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 fw-normal pb-4">Noël approche !</h1>
+                <p class="lead fw-normal pb-2">N'attendez pas le dernier moment, FONCEZ en magasins !</p>
+                <a class="btn btn-outline-secondary " href="#">Shop Vetements</a>
+                <a class="btn btn-outline-secondary" href="#">Shop Chaussures</a>
+                <a class="btn btn-outline-secondary" href="#">Shop Accessoires</a>
+                <a class="btn btn-outline-secondary" href="#">Shop Equipements</a>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+        <section class="py-5 text-center container">
+            <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-4 border-bottom">Custom cards</h2>
+
+                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" style="height: 514px;">
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" th:style="'background-image:url(' + @{/pictures/hoddie.png} + ');'">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Détente</h3>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="me-auto">
+                                        <img th:src="@{pictures/sadida_LOGO_avecBG_carre.jpg}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <a href="#" class="btn btn-primary my-2">Voir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" th:style="'background-image:url(' + @{/pictures/yeezy.png} + ');'">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Lifestyle</h3>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="me-auto">
+                                        <img th:src="@{pictures/sadida_LOGO_avecBG_carre.jpg}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <a href="#" class="btn btn-primary my-2">Voir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" th:style="'background-image:url(' + @{/pictures/sacDeFrappe.png} + ');'">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Sport</h3>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="me-auto">
+                                        <img th:src="@{pictures/sadida_LOGO_avecBG_carre.jpg}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <a href="#" class="btn btn-primary my-2">Voir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</h1>
+<div class="container">
+    <footer class="py-5">
+        <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Sadida</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-muted">Accueil</a></li>
+                    <li class="nav-item mb-2"><a href="./categories.html" class="nav-link p-0 text-muted">Categories</a></li>
+                    <li class="nav-item mb-2"><a href="./produits.html" class="nav-link p-0 text-muted">Produits</a></li>
+                    <li class="nav-item mb-2"><a href="./about.html" class="nav-link p-0 text-muted">A Propos</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-5 offset-md-5 mb-9">
+                <form>
+                    <p>Retour en haut de la page</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <a href="#" class="btn btn-primary my-2">Haut de page</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>&copy; 2022 Sadida, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+</div>
+
+<br/>
+<a href="hello-servlet">Hello Servlet</a>
+<script type="text/javascript" th:src="@{js/bootstrap.bundle.js}"></script>
+<script type="text/javascript" th:src="@{js/include.js}"></script>
+</body>
+</html>
