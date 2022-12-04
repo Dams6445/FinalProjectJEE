@@ -24,8 +24,6 @@ public class CategorieService {
 
     public void deleteCategorieByNom(String nom) { categorieRepository.delete(categorieRepository.findCategorieByNom(nom));}
 
-    public void  deleteCategorie(Categorie categorie) { categorieRepository.delete(categorie);}
-
     public Optional<Categorie> getCategorieById(Integer id){
         return categorieRepository.findById(id);
     }

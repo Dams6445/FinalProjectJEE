@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html  lang="fr" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1 class="display-4 pb-5 fw-normal">Recherhcer une catégorie par son nom</h1>
+
+    <form action="#" th:action="@{/rechercherCategorie}" th:object="${categorieParNom}" method="post">
+
+        <p>Nom de la categorie <input type=text th:field="${categorieParNom.nom}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+        </tr>
+            <td th:text="${categorieParNom.id}">ID</td>
+            <td th:text="${categorieParNom.nom}">Nom</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+
+    <h1 class="display-4 pb-5 fw-normal">Recherhcer un produit par son nom</h1>
+
+    <form action="#" th:action="@{/rechercherProduitParNom}" th:object="${produitParNom}" method="post">
+
+        <p>Nom de produit <input type=text th:field="${produitParNom.nom}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Reference</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Description</th>
+        </tr>
+            <td th:text="${produitParNom.id}">ID</td>
+            <td th:text="${produitParNom.reference}">reference</td>
+            <td th:text="${produitParNom.nom}">Nom</td>
+            <td th:text="${produitParNom.prix}">Prix</td>
+            <td th:text="${produitParNom.description}">Description</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h1 class="display-4 pb-5 fw-normal">Recherhcer un produit par sa reference</h1>
+
+    <form action="#" th:action="@{/rechercherProduitParRef}" th:object="${produitParRef}" method="post">
+
+        <p>Reference du produit <input type=text th:field="${produitParRef.reference}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Reference</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Description</th>
+        </tr>
+            <td th:text="${produitParRef.id}">ID</td>
+            <td th:text="${produitParRef.reference}">reference</td>
+            <td th:text="${produitParRef.nom}">Nom</td>
+            <td th:text="${produitParRef.prix}">Prix</td>
+            <td th:text="${produitParRef.description}">Description</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h1 class="display-4 pb-5 fw-normal">Recherhcer un produit par son prix</h1>
+
+    <form action="#" th:action="@{/rechercherProduitParPrix}" th:object="${produitParPrix}" method="post">
+
+        <p>Prix du produit <input type=text th:field="${produitParPrix.prix}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Reference</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Description</th>
+        </tr>
+        <tr th:each="produitParPrix : ${produitsParPrix}">
+            <td th:text="${produitParPrix.id}">ID</td>
+            <td th:text="${produitParPrix.reference}">reference</td>
+            <td th:text="${produitParPrix.nom}">Nom</td>
+            <td th:text="${produitParPrix.prix}">Prix</td>
+            <td th:text="${produitParPrix.description}">Description</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+
+    <h1 class="display-4 pb-5 fw-normal">Recherhcer une promotion par son nom</h1>
+
+    <form action="#" th:action="@{/rechercherPromotionParNom}" th:object="${promotionParNom}" method="post">
+
+        <p>Nom de la promotion <input type=text th:field="${promotionParNom.nom}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>reduction</th>
+        </tr>
+            <td th:text="${promotionParNom.id}">ID</td>
+            <td th:text="${promotionParNom.nom}">Nom</td>
+            <td th:text="${promotionParNom.reduction}">reduction</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h1 class="display-4 pb-5 fw-normal">Recherhcer une protion par sa reduction</h1>
+
+    <form action="#" th:action="@{/rechercherPromotionParPrix}" th:object="${promotionParPrix}" method="post">
+
+        <p>Prix de la promotion <input type=text th:field="${promotionParPrix.reduction}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>reduction</th>
+        </tr>
+        <tr th:each="promotionParPrix : ${promotionsParPrix}">
+            <td th:text="${promotionParPrix.id}">ID</td>
+            <td th:text="${promotionParPrix.nom}">Nom</td>
+            <td th:text="${promotionParPrix.reduction}">reduction</td>
+        </tr>
+    </table>
+
+</body>
+</html>

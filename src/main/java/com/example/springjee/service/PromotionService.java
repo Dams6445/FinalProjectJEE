@@ -13,8 +13,15 @@ public class PromotionService {
     @Autowired
     PromotionRepository promotionRepository;
 
-    public void deletePromotion( String nom ) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}
+    public List<Promotion> getAllPromotions() { return promotionRepository.findAll();}
+
+    public Promotion getPromotionByNom(String nom) { return  promotionRepository.findPromotionByNom(nom);}
+
+    public List<Promotion> getPromotionByPrix(Float prix) { return  promotionRepository.findPromotionByPrix(prix);}
+
 
     public List<Promotion> getPromotionByCategoie(Integer idCategorie) { return promotionRepository.findPromotionByCategorie(idCategorie);}
+
+    public void deletePromotion( String nom ) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}
 
 }

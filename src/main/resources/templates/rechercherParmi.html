@@ -1,7 +1,7 @@
 
 <html lang="fr" xmlns:th="http://www.thymleaf.org">
 <head>
-    <title>Supprimer Produit - Sadida</title>
+    <title>Afficher un produit - Sadida</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -15,9 +15,9 @@
 
                 <h1 class="display-4 pb-5 fw-normal">Rechrcher un produit par catégorie</h1>
 
-                <form action="#" th:action="@{/afficherProduitParCategorie}" th:object="${categorie}" method="post">
+                <form action="#" th:action="@{/rechercherProduitParCategorie}" th:object="${produitByCategorie}" method="post">
 
-                    <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+                    <p>Nom de la categorie <input type=text th:field="${produitByCategorie.nom}" class="form_entré"/></p>
 
                     <p><input type="submit" value="Submit"/></p>
                 </form>
@@ -39,10 +39,12 @@
                     </tr>
                 </table>
 
+                <h1 class="display-4 pb-5 fw-normal">Rechrcher une promotion par catégorie</h1>
 
-                <form action="#" th:action="@{/afficherPromotionParCategorie}" th:object="${categorie}" method="post">
 
-                    <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+                <form action="#" th:action="@{/rechercherPromotionParCategorie}" th:object="${promotionByCategorie}" method="post">
+
+                    <p>Nom de la categorie <input type=text th:field="${promotionByCategorie.nom}" class="form_entré"/></p>
 
                     <p><input type="submit" value="Submit"/></p>
                 </form>
@@ -52,13 +54,11 @@
                         <th>ID</th>
                         <th>Nom</th>
                         <th>reduction</th>
-                        <th>Nom Produit</th>
                     </tr>
                     <tr th:each="promotion : ${promotions}">
                         <td th:text="${promotion.id}">ID</td>
                         <td th:text="${promotion.nom}">Nom</td>
                         <td th:text="${promotion.reduction}">reduction</td>
-                        <td th:text="${promotion.produit.nom}">Nom produit</td>
                     </tr>
                 </table>
 
