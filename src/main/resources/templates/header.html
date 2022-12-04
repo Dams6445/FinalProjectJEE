@@ -5,10 +5,10 @@
         <img class="d-flex align-items-center col-md-1 navbar-brand img-responsive" src="./Pictures/sabiba_LOGO_sansBG.png" alt="logo" >
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="./index.html" class="nav-link px-2 link-dark">Accueil</a></li>
-          <li><a href="./categories.html" class="nav-link px-2 link-dark">Catégories</a></li>
-          <li><a href="./produits.html" class="nav-link px-2 link-dark">Produits</a></li>
-          <li><a href="./about.html" class="nav-link px-2 link-dark">A Propos</a></li>
+          <li><a th:href="@{index.html}" class="nav-link px-2 link-dark">Accueil</a></li>
+          <li><a th:href="@{categories.html}" class="nav-link px-2 link-dark">Catégories</a></li>
+          <li><a th:href="@{produits.html}" class="nav-link px-2 link-dark">Produits</a></li>
+          <li><a th:href="@{about.html.html}" class="nav-link px-2 link-dark">A Propos</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -22,11 +22,11 @@
             </svg>
           </button>
           <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item" href="./index.html">Accueil</a></li>
-            <li><a class="dropdown-item" href="./categories.html">Catégories</a></li>
-            <li><a class="dropdown-item" href="./produits.html">Produits</a></li>
+            <li><a class="dropdown-item" th:href="@{index.html}">Accueil</a></li>
+            <li><a class="dropdown-item" th:href="@{categories.html}">Catégories</a></li>
+            <li><a class="dropdown-item" th:href="@{produits.html}">Produits</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="./about.html">A Propos</a></li>
+            <li><a class="dropdown-item" th:href="@{about.html.html}">A Propos</a></li>
           </ul>
         </div>
       </div>
