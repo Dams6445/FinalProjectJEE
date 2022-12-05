@@ -1,7 +1,7 @@
 
 <html lang="fr" xmlns:th="http://www.thymleaf.org">
 <head>
-    <title>Afficher un produit - Sadida</title>
+    <title>Rechercher - Sadida</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 
                     <p>Nom de la categorie <input type=text th:field="${produitByCategorie.nom}" class="form_entré"/></p>
 
-                    <p><input type="submit" value="Submit"/></p>
+                    <p><input type="submit" value="Rechercher"/></p>
                 </form>
 
                 <table border="1">
@@ -30,12 +30,12 @@
                         <th>Prix</th>
                         <th>Description</th>
                     </tr>
-                    <tr th:each="produit : ${produits}">
-                        <td th:text="${produit.id}">ID</td>
-                        <td th:text="${produit.reference}">reference</td>
-                        <td th:text="${produit.nom}">Nom</td>
-                        <td th:text="${produit.prix}">Prix</td>
-                        <td th:text="${produit.description}">Description</td>
+                    <tr th:each="produitByCategorie : ${produitsByCategorie}">
+                        <td th:text="${produitByCategorie.id}">ID</td>
+                        <td th:text="${produitByCategorie.reference}">reference</td>
+                        <td th:text="${produitByCategorie.nom}">Nom</td>
+                        <td th:text="${produitByCategorie.prix}">Prix</td>
+                        <td th:text="${produitByCategorie.description}">Description</td>
                     </tr>
                 </table>
 
@@ -46,7 +46,7 @@
 
                     <p>Nom de la categorie <input type=text th:field="${promotionByCategorie.nom}" class="form_entré"/></p>
 
-                    <p><input type="submit" value="Submit"/></p>
+                    <p><input type="submit" value="Rechercher"/></p>
                 </form>
 
                 <table border="1">
@@ -55,10 +55,10 @@
                         <th>Nom</th>
                         <th>reduction</th>
                     </tr>
-                    <tr th:each="promotion : ${promotions}">
-                        <td th:text="${promotion.id}">ID</td>
-                        <td th:text="${promotion.nom}">Nom</td>
-                        <td th:text="${promotion.reduction}">reduction</td>
+                    <tr th:each="promotionByCategorie : ${promotionsByCategorie}">
+                        <td th:text="${promotionByCategorie.id}">ID</td>
+                        <td th:text="${promotionByCategorie.nom}">Nom</td>
+                        <td th:text="${promotionByCategorie.reduction}">reduction</td>
                     </tr>
                 </table>
 
@@ -109,6 +109,5 @@
 </div>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>

@@ -34,7 +34,12 @@ public class FindInController {
     }
 
     @ModelAttribute("promotionByCategorie")
-    public Categorie promotionByCategorie() {
+    public Categorie promotionsByCategorie() {
+        return new Categorie();
+    }
+
+    @ModelAttribute("categorie")
+    public Categorie Categorie() {
         return new Categorie();
     }
 
@@ -46,18 +51,18 @@ public class FindInController {
 
 
     @PostMapping("/rechercherProduitParCategorie")
-    public String displayProduitByCategorie(@ModelAttribute("categorie") Categorie categorie, Model model){
+    public String displayProduitByCategorie(@ModelAttribute Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
         List<Produit> produits = produitService.getProduitByCategorie(categorieService.getCategorieByNom(categorie.getNom()).getId());
-        model.addAttribute("produits", produits);
+        model.addAttribute("produitsByCategorie", produits);
         return "rechercherParmi";
     }
 
     @PostMapping("/rechercherPromotionParCategorie")
-    public String displayPromotionByCategorie(@ModelAttribute("categorie") Categorie categorie, Model model){
+    public String displayPromotionByCategorie(@ModelAttribute Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
         List<Promotion> promotions = promotionService.getPromotionByCategoie(categorieService.getCategorieByNom(categorie.getNom()).getId());
-        model.addAttribute("promotions", promotions);
+        model.addAttribute("promotionsByCategorie", promotions);
         return "rechercherParmi";
     }
 

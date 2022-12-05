@@ -1,6 +1,6 @@
 <html lang="fr" xmlns:th="http://www.thymleaf.org">
 <head>
-    <title>Ajouter Produit - Sadida</title>
+    <title>Ajouter - Sadida</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
                     <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
 
-                    <p><input type="submit" value="Submit"/></p>
+                    <p><input type="submit" value="Ajouter"/></p>
                 </form>
 
                     <h1 class="display-4 pb-5 fw-normal">Ajouter un produit</h1>
@@ -28,15 +28,15 @@
                     <p>Prix du produit <input type=text th:field="${produit.prix}" class="form_entré"/></p>
                     <p>Categorie du produit <input type=text th:field="${produit.categorie}" class="form_entré"/></p>
                     <!-- <p>Type du produit <input type=text th:field="${produit.typeProduit}" class="form_entré"/></p> -->
-                    <p><input type="submit" value="Submit"/></p>
+                    <p><input type="submit" value="Ajouter"/></p>
                 </form>
 
                     <h1 class="display-4 pb-5 fw-normal">Ajouter une promotion</h1>
 
                     <form action="#" th:action="@{/ajouterPromotion}" th:object="${promotion}" method="post">
                         <p>Nom de la promotion <input type=text th:field="${promotion.nom}" class="form_entré"/></p>
-                        <p>reduction<input type=text th:field="${promotion.reduction}" class="form_entré"/></p>
-                        <p>produit<input type=text th:field="${promotion.produit}" class="form_entré"/></p>
+                        <p>Reduction <input type=text th:field="${promotion.reduction}" class="form_entré"/></p>
+                        <p>Produit <input type=text th:field="${promotion.produit}" class="form_entré"/></p>
                         <!--
                         <select th:field="*{produit}" class="form_entré" id ="produit" name ="produit">
                         <option value="">Choisir Produit</option>
@@ -46,7 +46,7 @@
                             th:text="${Produit}"></option>
                         </select>
                         -->
-                        <p><input type="submit" value="Submit"/></p>
+                        <p><input type="submit" value="Ajouter"/></p>
                     </form>
 
                 </div>
@@ -55,6 +55,5 @@
     </div>
 </div>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>
