@@ -1,6 +1,6 @@
 <html lang="fr" xmlns:th="http://www.thymleaf.org">
 <head>
-    <title>Supprimer Produit - Sadida</title>
+    <title>Supprimer - Sadida</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 
                             <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
 
-                            <p><input type="submit" value="Submit"/></p>
+                            <p><input type="submit" value="Supprimer"/></p>
                         </form>
 
                         <hr>
@@ -30,10 +30,9 @@
 
                             <span>Nom du produit <input type=text th:field="${produit.nom}" class="form_entré"/></span>
 
-                            <span><input type="submit" value="Submit"/></span>
+                            <span><input type="submit" value="Supprimer"/></span>
                         </form>
 
-                        <hr>
 
                         <h1 class="display-4 pb-5 fw-normal">Supprimer un produit</h1>
 
@@ -41,16 +40,18 @@
 
                             <span>Reference du produit <input type=text th:field="${produit.reference}" class="form_entré"/></span>
 
-                            <span><input type="submit" value="Submit"/></span>
+                            <span><input type="submit" value="Supprimer"/></span>
                         </form>
+
+                        <hr>
 
                         <h1 class="display-4 pb-5 fw-normal">Supprimer une promotion</h1>
 
                         <form action="#" th:action="@{/supprimerPromotion}" th:object="${promotion}" method="post">
 
-                            <span>Reference du produit <input type=text th:field="${promotion.nom}" class="form_entré"/></span>
+                            <span>Nom de la promotion <input type=text th:field="${promotion.nom}" class="form_entré"/></span>
 
-                            <span><input type="submit" value="Submit"/></span>
+                            <span><input type="submit" value="Supprimer"/></span>
                         </form>
 
 
@@ -101,6 +102,5 @@
 </div>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>

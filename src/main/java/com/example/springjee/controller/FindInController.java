@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class PrintController {
+public class FindInController {
 
     @Autowired
     ProduitService produitService;
@@ -28,31 +28,42 @@ public class PrintController {
     PromotionService promotionService;
 
 
-    @ModelAttribute("categorie")
-    public Categorie categorie() {
+    @ModelAttribute("produitByCategorie")
+    public Categorie produitByCategorie() {
         return new Categorie();
     }
 
-    @GetMapping("/afficher")
-    public String displayPrint() {
-        return "afficher";
+    @ModelAttribute("promotionByCategorie")
+    public Categorie promotionsByCategorie() {
+        return new Categorie();
+    }
+
+    @ModelAttribute("categorie")
+    public Categorie Categorie() {
+        return new Categorie();
     }
 
 
-    @PostMapping("/afficherProduitParCategorie")
-    public String displayProduitByCategorie(@ModelAttribute("categorie") Categorie categorie, Model model){
+    @GetMapping("/rechercherParmi")
+    public String displayPrint() {
+        return "rechercherParmi";
+    }
+
+
+    @PostMapping("/rechercherProduitParCategorie")
+    public String displayProduitByCategorie(@ModelAttribute Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
         List<Produit> produits = produitService.getProduitByCategorie(categorieService.getCategorieByNom(categorie.getNom()).getId());
-        model.addAttribute("produits", produits);
-        return "afficher";
+        model.addAttribute("produitsByCategorie", produits);
+        return "rechercherParmi";
     }
 
-    @PostMapping("/afficherPromotionParCategorie")
-    public String displayPromotionByCategorie(@ModelAttribute("categorie") Categorie categorie, Model model){
+    @PostMapping("/rechercherPromotionParCategorie")
+    public String displayPromotionByCategorie(@ModelAttribute Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
         List<Promotion> promotions = promotionService.getPromotionByCategoie(categorieService.getCategorieByNom(categorie.getNom()).getId());
-        model.addAttribute("promotions", promotions);
-        return "afficher";
+        model.addAttribute("promotionsByCategorie", promotions);
+        return "rechercherParmi";
     }
 
 }

@@ -16,13 +16,19 @@ public class PromotionService {
     @Autowired
     PromotionRepository promotionRepository;
 
-    public void addPromotion(Promotion promotion){
-        promotionRepository.save(new Promotion(promotion.getNom(), promotion.getReduction(), promotion.getProduit()));
-    }
+
+    public List<Promotion> getAllPromotions() { return promotionRepository.findAll();}
+
+    public Promotion getPromotionByNom(String nom) { return  promotionRepository.findPromotionByNom(nom);}
+
+    public List<Promotion> getPromotionByPrix(Float prix) { return  promotionRepository.findPromotionByPrix(prix);}
+
+    public void addPromotion(Promotion promotion){ promotionRepository.save(new Promotion(promotion.getNom(), promotion.getReduction(), promotion.getProduit())); }
 
     public void deletePromotionByNom(String nom) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}
-    public void deletePromotion( String nom ) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}
 
     public List<Promotion> getPromotionByCategoie(Integer idCategorie) { return promotionRepository.findPromotionByCategorie(idCategorie);}
+
+    public void deletePromotion( String nom ) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}
 
 }

@@ -72,7 +72,7 @@ class DeleteController {
         return "supprimer";
     }
 
-    @DeleteMapping("/supprimerPromotion")
+    @PostMapping("/supprimerPromotion")
     public String deletePromotion(@ModelAttribute Promotion promotion, Model model){
         model.addAttribute("promotion",promotion);
         promotionService.deletePromotion(promotion.getNom());
