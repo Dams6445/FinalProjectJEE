@@ -24,8 +24,6 @@ public class CategorieService {
 
     public void deleteCategorieByNom(String nom) { categorieRepository.delete(categorieRepository.findCategorieByNom(nom));}
 
-    public Categorie getCategorieByNom(String nom) { return categorieRepository.findCategorieByNom(nom);}
-
     public void  deleteCategorie(Categorie categorie) { categorieRepository.delete(categorie);}
 
     public Optional<Categorie> getCategorieById(Integer id){
@@ -33,4 +31,12 @@ public class CategorieService {
     }
 
     public Categorie getCategorieByNom(String nom) { return categorieRepository.findCategorieByNom(nom);}
+
+    public void updateCategorie(Categorie categorie){
+        Categorie categorieFromDB = categorieRepository.findById(categorie.getId())
+                .orElse(new Categorie(categorie.getNom(), null));
+        categorieFromDB.setNom(categorie.getNom());
+        categorieFromDB.setImage(categorie.getImage());
+        categorieRepository.save(categorieFromDB);
+    }
 }

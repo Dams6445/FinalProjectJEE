@@ -11,4 +11,6 @@ public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
 
     @Query("SELECT c FROM Categorie c WHERE c.nom LIKE :nomCategorie")
     Categorie findCategorieByNom(@Param("nomCategorie") String nomCategorie);
+
+
 }

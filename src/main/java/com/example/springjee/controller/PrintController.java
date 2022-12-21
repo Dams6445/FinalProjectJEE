@@ -42,7 +42,7 @@ public class PrintController {
     @PostMapping("/afficherProduitParCategorie")
     public String displayProduitByCategorie(@ModelAttribute("categorie") Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
-        List<Produit> produits = produitService.getProduitByCategorie(categorieService.getCategorieByNom(categorie.getNom()).getId_categorie());
+        List<Produit> produits = produitService.getProduitByCategorie(categorieService.getCategorieByNom(categorie.getNom()).getId());
         model.addAttribute("produits", produits);
         return "afficher";
     }
@@ -50,7 +50,7 @@ public class PrintController {
     @PostMapping("/afficherPromotionParCategorie")
     public String displayPromotionByCategorie(@ModelAttribute("categorie") Categorie categorie, Model model){
         model.addAttribute("categorie",categorie);
-        List<Promotion> promotions = promotionService.getPromotionByCategoie(categorieService.getCategorieByNom(categorie.getNom()).getId_categorie());
+        List<Promotion> promotions = promotionService.getPromotionByCategoie(categorieService.getCategorieByNom(categorie.getNom()).getId());
         model.addAttribute("promotions", promotions);
         return "afficher";
     }
