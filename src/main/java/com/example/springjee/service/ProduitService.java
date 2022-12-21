@@ -32,4 +32,24 @@ public class ProduitService {
 
     public void deleteProduitByReference(String reference) { produitRepository.delete(produitRepository.findProduitByReference(reference));}
 
+    public void updateProduit(Produit produit){
+        Produit produitFromDB = produitRepository.findById(produit.getId())
+                .orElse(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), null, null));
+        if(produit.getNom() != null) {
+            produitFromDB.setNom(produit.getNom());
+        }
+        if(produit.getImage() != null) {
+            produitFromDB.setImage(produit.getImage());
+        }
+        if(produit.getReference() != null) {
+            produitFromDB.setReference(produit.getReference());
+        }
+        if(produit.getPrix() != null) {
+            produitFromDB.setPrix(produit.getPrix());
+        }
+        if(produit.getDescription() != null) {
+            produitFromDB.setDescription(produit.getDescription());
+        }
+        produitRepository.save(produitFromDB);
+    }
 }

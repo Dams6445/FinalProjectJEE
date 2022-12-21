@@ -31,4 +31,12 @@ public class PromotionService {
 
     public void deletePromotion( String nom ) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}
 
+    public void updatePromotion(Promotion promotion) {
+        Promotion promotionFromDB = promotionRepository.findById(promotion.getId())
+                .orElse(new Promotion(promotion.getNom(), promotion.getReduction(), promotion.getProduit()));
+        promotionFromDB.setReduction(promotion.getReduction());
+        promotionFromDB.setProduit(promotion.getProduit());
+        promotionFromDB.setNom(promotion.getNom());
+        promotionRepository.save(promotionFromDB);
+    }
 }

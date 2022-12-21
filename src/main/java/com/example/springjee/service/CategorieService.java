@@ -39,4 +39,5 @@ public class CategorieService {
         categorieFromDB.setImage(categorie.getImage());
         categorieRepository.save(categorieFromDB);
     }
+
 }
