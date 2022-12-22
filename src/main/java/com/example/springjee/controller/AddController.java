@@ -12,6 +12,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 @Controller
 public class AddController {
     @Autowired
@@ -48,7 +56,10 @@ public class AddController {
         return  "ajouter";
     }
     @PostMapping("/ajouterCategorie")
-    public String ajouterCategorie(@ModelAttribute Categorie categorie, Model modele) {
+    public String ajouterCategorie(@ModelAttribute Categorie categorie,@RequestParam(value = "image", required = false) String path, Model modele) throws IOException {
+        String filePath = "./src/main/resources/pictures/" + path;
+        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+        categorie.setImage(bytes);
         modele.addAttribute("categorie", categorie);
         categorieService.addCategorie(categorie);
         return "ajouter";

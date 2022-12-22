@@ -19,7 +19,7 @@ public class CategorieService {
     }
 
     public void addCategorie(Categorie categorie){
-        categorieRepository.save(new Categorie(categorie.getNom(), null));
+        categorieRepository.save(new Categorie(categorie.getNom(),categorie.getImage()));
     }
 
     public void deleteCategorieByNom(String nom) { categorieRepository.delete(categorieRepository.findCategorieByNom(nom));}
