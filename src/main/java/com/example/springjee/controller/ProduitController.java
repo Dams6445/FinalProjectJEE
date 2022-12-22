@@ -3,10 +3,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class CategorieController {
+public class ProduitController {
 
-    @RequestMapping("/categorie")
-    public String displayHome() {
-        return "categorie";
+    @RequestMapping("/produit")
+    public String displayHome(){
+        return "produit";
     }
+
 }

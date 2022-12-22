@@ -18,6 +18,11 @@ import java.util.List;
 @Controller
 class DeleteController {
 
+    @RequestMapping("/deleteProduit")
+    public String displayHome(){
+        return "deleteProduit";
+    }
+
     @ModelAttribute("categorie")
     public Categorie categorie() {
         return new Categorie();

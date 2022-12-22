@@ -17,19 +17,18 @@
             <div class="col-md-6 p-lg-5 mx-auto my-5">
                 <h1 class="display-4 fw-normal pb-4">Noël approche !</h1>
                 <p class="lead fw-normal pb-2">N'attendez pas le dernier moment, FONCEZ en magasins !</p>
-                <a class="btn btn-outline-secondary " href="#">Shop Vetements</a>
-                <a class="btn btn-outline-secondary" href="#">Shop Chaussures</a>
-                <a class="btn btn-outline-secondary" href="#">Shop Accessoires</a>
-                <a class="btn btn-outline-secondary" href="#">Shop Equipements</a>
+
+                <a class="btn btn-outline-secondary" th:href="@{/produit}" >Shop Chill</a>
+
             </div>
             <div class="product-device shadow-sm d-none d-md-block"></div>
             <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
         </div>
         <section class="py-5 text-center container">
             <div class="container px-4 py-5" id="custom-cards">
-                <h2 class="pb-4 border-bottom">Custom cards</h2>
+                <h2 class="pb-4 border-bottom">Catégories</h2>
+                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 
-                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" style="height: 514px;">
                     <div class="col">
                         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" th:style="'background-image:url(' + @{/pictures/hoddie.png} + ');'">
                             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
@@ -39,43 +38,13 @@
                                         <img th:src="@{pictures/sadida_LOGO_avecBG_carre.jpg}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                                     </li>
                                     <li class="d-flex align-items-center me-3">
-                                        <a href="#" class="btn btn-primary my-2">Voir</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" th:style="'background-image:url(' + @{/pictures/yeezy.png} + ');'">
-                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Lifestyle</h3>
-                                <ul class="d-flex list-unstyled mt-auto">
-                                    <li class="me-auto">
-                                        <img th:src="@{pictures/sadida_LOGO_avecBG_carre.jpg}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                                    </li>
-                                    <li class="d-flex align-items-center me-3">
-                                        <a href="#" class="btn btn-primary my-2">Voir</a>
+                                        <a th:href="@{/produit}" class="btn btn-primary my-2">Voir</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" th:style="'background-image:url(' + @{/pictures/sacDeFrappe.png} + ');'">
-                            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Collection Sport</h3>
-                                <ul class="d-flex list-unstyled mt-auto">
-                                    <li class="me-auto">
-                                        <img th:src="@{pictures/sadida_LOGO_avecBG_carre.jpg}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                                    </li>
-                                    <li class="d-flex align-items-center me-3">
-                                        <a href="#" class="btn btn-primary my-2">Voir</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
