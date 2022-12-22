@@ -34,10 +34,13 @@ public class CategorieService {
 
     public void updateCategorie(Categorie categorie){
         Categorie categorieFromDB = categorieRepository.findById(categorie.getId())
-                .orElse(new Categorie(categorie.getNom(), null));
-        categorieFromDB.setNom(categorie.getNom());
-        categorieFromDB.setImage(categorie.getImage());
+                .orElse(new Categorie(categorie.getNom(), categorie.getImage()));
+        if(!("".equals(categorie.getNom()))) {
+            categorieFromDB.setNom(categorie.getNom());
+        }
+        if(categorie.getImage() != null) {
+            categorieFromDB.setImage(categorie.getImage());
+        }
         categorieRepository.save(categorieFromDB);
     }
-
 }

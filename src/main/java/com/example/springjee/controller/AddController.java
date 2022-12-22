@@ -50,7 +50,10 @@ public class AddController {
     }
 
     @PostMapping("/ajouterProduit")
-    public String ajouterProduit(@ModelAttribute Produit produit, Model modele){
+    public String ajouterProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
+        String filePath = "./src/main/resources/pictures/" + path;
+        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+        produit.setImage(bytes);
         modele.addAttribute("produit", produit);
         produitService.addProduit(produit);
         return  "ajouter";

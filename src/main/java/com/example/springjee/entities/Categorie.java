@@ -27,7 +27,6 @@ public class Categorie {
     private byte[] image;
 
     public Categorie(){
-
     }
 
     public Categorie(String nom, byte[] image) {

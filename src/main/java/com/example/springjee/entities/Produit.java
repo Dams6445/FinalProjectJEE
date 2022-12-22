@@ -32,10 +32,10 @@ public class Produit {
     private TypeProduit typeProduit;
     */
     @Column(name = "produit_description")
-    private StringNVarcharType description;
+    private String description;
 
     @Column(name = "produit_image")
-    private ImageType image;
+    private byte[] image;
 
 
     /////////////////////////////
@@ -47,7 +47,7 @@ public class Produit {
     }
 
     public Produit(String reference, String nom, Float prix, Categorie categorie,
-                   StringNVarcharType description, ImageType image){
+                   String description, byte[] image){
         this.reference = reference;
         this.nom = nom;
         this.prix = prix;
@@ -94,17 +94,17 @@ public class Produit {
 
     public void setCategorie(Categorie categorie) { this.categorie = categorie; }
 
-    public StringNVarcharType getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(StringNVarcharType annee_sortie) { this.description = annee_sortie; }
+    public void setDescription(String annee_sortie) { this.description = annee_sortie; }
 
-    public ImageType getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(ImageType image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
     /*

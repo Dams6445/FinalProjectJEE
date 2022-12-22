@@ -25,7 +25,7 @@ public class ProduitService {
     public List<Produit> getProduitByPrix(Float prix) { return produitRepository.findProduitByPrix(prix);}
 
     public void addProduit(Produit produit){
-        produitRepository.save(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), null, null));
+        produitRepository.save(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), produit.getDescription(), produit.getImage()));
     }
 
     public void deleteProduitByNom(String nom) { produitRepository.delete(produitRepository.findProduitByNom(nom));}
@@ -34,21 +34,24 @@ public class ProduitService {
 
     public void updateProduit(Produit produit){
         Produit produitFromDB = produitRepository.findById(produit.getId())
-                .orElse(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), null, null));
-        if(produit.getNom() != null) {
+                .orElse(new Produit(produit.getReference(), produit.getNom(), produit.getPrix(), produit.getCategorie(), produit.getDescription(), produit.getImage()));
+        if(!("".equals(produit.getNom()))) {
             produitFromDB.setNom(produit.getNom());
         }
-        if(produit.getImage() != null) {
-            produitFromDB.setImage(produit.getImage());
-        }
-        if(produit.getReference() != null) {
+        if(!("".equals(produit.getReference()))) {
             produitFromDB.setReference(produit.getReference());
         }
         if(produit.getPrix() != null) {
             produitFromDB.setPrix(produit.getPrix());
         }
-        if(produit.getDescription() != null) {
+        if(produit.getCategorie() != null) {
+            produitFromDB.setCategorie(produit.getCategorie());
+        }
+        if(!("".equals(produit.getDescription()))) {
             produitFromDB.setDescription(produit.getDescription());
+        }
+        if(produit.getImage() != null) {
+            produitFromDB.setImage(produit.getImage());
         }
         produitRepository.save(produitFromDB);
     }
