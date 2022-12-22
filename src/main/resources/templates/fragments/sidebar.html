@@ -1,0 +1,86 @@
+<div th:fragment="sidebar" class="row">
+    <div class="col-lg-auto">
+        <div class="flex-shrink-0 p-3 bg-white">
+            <a href="#" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <span class="fs-5 fw-semibold">Navigation</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#categories-collapse" aria-expanded="true">
+                        Categories
+                    </button>
+                    <div class="collapse" id="categories-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <li><a th:href="@{/sport}" class="link-dark d-inline-flex text-decoration-none rounded">Sport</a></li>
+                            <li><a th:href="@{/lifeStyle}" class="link-dark d-inline-flex text-decoration-none rounded">LifeStyle</a></li>
+                            <li><a th:href="@{/chill}" class="link-dark d-inline-flex text-decoration-none rounded">Chill</a></li>
+                            <li class="border-top my-1"></li>
+                            <li><a th:href="@{/categories}" class="link-dark d-inline-flex text-decoration-none rounded">all</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-1">
+                    <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#produits-collapse" aria-expanded="false">
+                        Produits
+                    </button>
+                    <div class="collapse" id="produits-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <li><a th:href="@{/vetements}" class="link-dark d-inline-flex text-decoration-none rounded">Vetements</a></li>
+                            <li><a th:href="@{/chaussures}" class="link-dark d-inline-flex text-decoration-none rounded">Chaussures</a></li>
+                            <li><a th:href="@{/accessoires}" class="link-dark d-inline-flex text-decoration-none rounded">Accessoires</a></li>
+                            <li><a th:href="@{/equipement_Sportif}" class="link-dark d-inline-flex text-decoration-none rounded">Equipement Sportif</a></li>
+                            <li class="border-top my-1"></li>
+                            <li><a th:href="@{/produits}" class="link-dark d-inline-flex text-decoration-none rounded">all</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
+                        Gestion
+                    </button>
+                    <div class="collapse" id="admin-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#adminCategories-collapse" aria-expanded="false">
+                                Gestion Categories
+                            </button>
+                            <div class="collapse" id="adminCategories-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                                    <li><a th:href="@{/addProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter une catégorie</a></li>
+                                    <li><a th:href="@{/deleteProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer une catégorie</a></li>
+                                    <li><a th:href="@{/editProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Modifier une catégorie</a></li>
+                                    <li class="border-top my-1"></li>
+                                </ul>
+                            </div>
+                        </ul>
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#adminTypes-collapse" aria-expanded="false">
+                                Gestion Type de Produit
+                            </button>
+                            <div class="collapse" id="adminTypes-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                                    <li><a th:href="@{/addProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter un type de produit</a></li>
+                                    <li><a th:href="@{/deleteProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer un type de produit</a></li>
+                                    <li><a th:href="@{/editProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Modifier un type de produit</a></li>
+                                    <li class="border-top my-1"></li>
+                                </ul>
+                            </div>
+                        </ul>
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#adminProduits-collapse" aria-expanded="false">
+                                Gestion Produits
+                            </button>
+                            <div class="collapse" id="adminProduits-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                                    <li><a th:href="@{/addProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter un produit</a></li>
+                                    <li><a th:href="@{/deleteProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer un produit</a></li>
+                                    <li><a th:href="@{/editProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Modifier un produit</a></li>
+                                    <li class="border-top my-1"></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>

@@ -37,12 +37,6 @@ public class CategorieController {
         return "index";
     }
 
-    @GetMapping("/toto")
-    public String afficherToto(Model model){
-        model.addAttribute("printToto","tata");
-        return "index";
-    }
-
     @PutMapping("/add/{nom}")
     public String addCategorie(@PathVariable String nom){
         categorieService.addCategorie(nom);
