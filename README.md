@@ -7,6 +7,10 @@ Notre site est un site de vente en ligne de la marque Sadida, nous avons princip
 
 - [@BAULU  Evan BAUDOIN Cyril BRIOL--DUHALDE Damien](https://github.com/Dams6445/FinalProjectJEE)
 
+## Emplacement du code source
+
+Le code source se situe dans la branche springJEE du projet, nous n'avons pas réussis à le mettre dans la branche master pour des raisons d'historiques différents.
+
 ## Fonctionnement de la base de données
 Pour le fonctionnement de la base de données, il faut mettre son identifiant et mot de passe SQL dans le fichier : "/src/main/resources/application.properties".
 ```java
