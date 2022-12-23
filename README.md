@@ -13,7 +13,7 @@ Pour le fonctionnement de la base de données, il faut mettre son identifiant et
 spring.datasource.username= "IdentifiantSQL"
 spring.datasource.password= "MotDePasseSQL"
 ```
-Il faut ensuite créer une database nommé "jee" sur SQL.
+Il faut ensuite créer une database nommé "jee" sur SQL, lancer l'application va ensuite créer automatiquement les bases et les liens entre elles.
 
 ## Utilisation d'images
 
