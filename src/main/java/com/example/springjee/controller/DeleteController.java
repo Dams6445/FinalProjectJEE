@@ -97,6 +97,8 @@ class DeleteController {
 
     @PostMapping("/supprimerProduitParNom")
     public String deleteProduitByNom(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         model.addAttribute("produit",produit);
         produitService.deleteProduitByNom(produit.getNom());
         return "validationSuppression";
@@ -104,6 +106,8 @@ class DeleteController {
 
     @PostMapping("/supprimerProduitParRef")
     public String deleteProduitByRef(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         model.addAttribute("produit", produit);
         produitService.deleteProduitByReference(produit.getReference());
         return "validationSuppression";
