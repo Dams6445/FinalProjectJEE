@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class AddController {
     @Autowired
@@ -37,25 +39,49 @@ public class AddController {
     }
 
     @RequestMapping("/ajouter")
-    public String ajouter(){
+    public String ajouter(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         return "ajouter";
     }
 
-    @PostMapping("/ajouterProduit")
-    public String ajouterProduit(@ModelAttribute Produit produit, Model modele){
-        modele.addAttribute("produit", produit);
-        produitService.addProduit(produit);
-        return  "ajouter";
+    @RequestMapping("/ajouterCategorie")
+    public String afficherAjouterCategorie(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "ajouterCategorie";
     }
-    @PostMapping("/ajouterCategorie")
-    public String ajouterCategorie(@ModelAttribute Categorie categorie, Model modele) {
-        modele.addAttribute("categorie", categorie);
+
+    @RequestMapping("/ajouterProduit")
+    public String afficherAjouterProduit(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "ajouterProduit";
+    }
+
+    @PostMapping("/ajoutCategorie")
+    public String ajouterCategorie(@ModelAttribute Categorie categorie, Model model) {
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        model.addAttribute("categorie", categorie);
         categorieService.addCategorie(categorie);
-        return "ajouter";
+        return "ajouterCategorie";
     }
+
+    @PostMapping("/ajoutProduit")
+    public String ajouterProduit(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        model.addAttribute("produit", produit);
+        produitService.addProduit(produit);
+        return  "ajouterProduit";
+    }
+
     @PostMapping("/ajouterPromotion")
-    public String ajouterCategorie(@ModelAttribute Promotion promotion, Model modele) {
-        modele.addAttribute("promotion", promotion);
+    public String ajouterCategorie(@ModelAttribute Promotion promotion, Model model) {
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        model.addAttribute("promotion", promotion);
         promotionService.addPromotion(promotion);
         return "ajouter";
     }

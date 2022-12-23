@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Produits</title>
-
+  <meta charset="UTF-8">
+  <title>Sadida - Accueil</title>
+  <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
 </head>
 <body>
-    <h1>Produits</h1>
+
+<div th:replace="fragments/header :: headerbar"></div>
+
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+<!--Container Main start-->
+<div class="col">
+  <section class="py-5 text-center container">
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-4 border-bottom">Produits</h2>
+
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+
+        <th:block th:each="produit : ${produits}">
+
+            <div class="col mb-5" >
+              <div class="card h-100">
+                <!-- Sale badge-->
+                <div class="badge bg-dark text-white position-absolute"  style="top: 0.5rem; right: 0.5rem">Sale</div>
+
+                <!-- Product image-->
+                <img class="card-img-top" src="../pictures/jogging.png" alt="..." />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                  <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder" th:text="${produit.nom}"></h5>
+                    <!-- Product price-->
+
+                    <span class="text-muted text-decoration-line-through" ></span>
+                    <span th:text="${produit.prix}"></span>
+                  </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                </div>
+              </div>
+            </div>
+
+        </th:block>
+
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<div th:replace="fragments/footer :: footerbar"></div>
+
+<script type="text/javascript" th:src="@{js/bootstrap.bundle.js}"></script>
 </body>
 </html>

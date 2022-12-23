@@ -26,13 +26,9 @@ public class Produit {
     @ManyToOne
     @JoinColumn(name = "categorie",nullable = false)
     private Categorie categorie;
-    /*
-    @ManyToOne
-    @JoinColumn(name = "typeProduit")
-    private TypeProduit typeProduit;
-    */
+
     @Column(name = "produit_description")
-    private StringNVarcharType description;
+    private String description;
 
     @Column(name = "produit_image")
     private ImageType image;
@@ -47,12 +43,11 @@ public class Produit {
     }
 
     public Produit(String reference, String nom, Float prix, Categorie categorie,
-                   StringNVarcharType description, ImageType image){
+                   String description, ImageType image){
         this.reference = reference;
         this.nom = nom;
         this.prix = prix;
         this.categorie = categorie;
-        //this.typeProduit = typeProduit;
         this.description = description;
         this.image = image;
     }
@@ -94,11 +89,11 @@ public class Produit {
 
     public void setCategorie(Categorie categorie) { this.categorie = categorie; }
 
-    public StringNVarcharType getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(StringNVarcharType annee_sortie) { this.description = annee_sortie; }
+    public void setDescription(String description) { this.description = description; }
 
     public ImageType getImage() {
         return image;
@@ -107,12 +102,7 @@ public class Produit {
     public void setImage(ImageType image) {
         this.image = image;
     }
-    /*
-    public TypeProduit getTypeProduit() { return typeProduit; }
 
-    public void setTypeProduit(TypeProduit typeProduit) { this.typeProduit = typeProduit; }
-
-     */
 }
 
 
