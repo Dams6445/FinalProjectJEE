@@ -11,6 +11,10 @@ Notre site est un site de vente en ligne de la marque Sadida, nous avons princip
 
 Le code source se situe dans la branche springJEE du projet, nous n'avons pas réussis à le mettre dans la branche master pour des raisons d'historiques différents.
 
+## Lancement de l'application
+
+Pour lancer l'application, télécharger le fichier war, ensuite aller sur le manager tomcat et déployer le war puis cliqué sur l'application correspondante dans les applications.
+
 ## Fonctionnement de la base de données
 Pour le fonctionnement de la base de données, il faut mettre son identifiant et mot de passe SQL dans le fichier : "/src/main/resources/application.properties".
 ```java
