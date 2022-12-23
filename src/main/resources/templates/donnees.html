@@ -14,13 +14,16 @@
 <!--Container Main start-->
 <div class="col">
   <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
-    <div class="p-lg-5 mx-auto my-5">
-      <h1 class="display-4 pb-5 fw-normal">Données du site</h1>
-      <br>
-      <br>
 
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">Données du site</h1>
+      <p class="lead fw-normal">Accédez facilement à toutes les données de Sadida</p>
+    </div>
 
-      <h1 class="display-4 pb-5 fw-normal">Categories</h1>
+    <hr />
+
+    <div class="product-device pt-4 pb-3 shadow-sm d-none d-md-block">
+      <h2 class="pb-2">Catégories</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -30,18 +33,20 @@
           </tr>
           </thead>
           <tbody>
-            <tr th:each="categorie : ${categories}">
-              <td th:text="${categorie.id}">ID</td>
-              <td th:text="${categorie.nom}">Nom</td>
-            </tr>
+          <tr th:each="categorie : ${categories}">
+            <td th:text="${categorie.id}">ID</td>
+            <td th:text="${categorie.nom}">Nom</td>
+          </tr>
           </tbody>
         </table>
       </div>
+    </div>
 
-      <br>
-      <br>
+    <br>
+    <br>
 
-      <h1 class="display-4 pb-5 fw-normal">Produits</h1>
+    <div class="product-device pt-4 pb-3 shadow-sm d-none d-md-block">
+      <h2 class="pb-2">Produits</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -57,21 +62,23 @@
           <tbody>
           <tr th:each="produit : ${produits}">
             <td th:text="${produit.id}">ID</td>
-            <td th:text="${produit.reference}">reference</td>
+            <td th:text="${produit.reference}">Référence</td>
             <td th:text="${produit.nom}">Nom</td>
             <td th:each="categorie : ${produit.categorie}" > <span th:text="${categorie.nom}"></span></td>
             <td th:text="${produit.prix}">Prix</td>
             <td th:text="${produit.description}">Description</td>
           </tr>
         </table>
-          </tbody>
+        </tbody>
         </table>
       </div>
+    </div>
 
-      <br>
-      <br>
+    <br>
+    <br>
 
-      <h1 class="display-4 pb-5 fw-normal">Promotion</h1>
+    <div class="product-device pt-4 pb-3 shadow-sm d-none d-md-block">
+      <h2 class="pb-2">Promotion</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -86,16 +93,37 @@
           <tr th:each="promotion : ${promotions}">
             <td th:text="${promotion.id}">ID</td>
             <td th:text="${promotion.nom}">Nom</td>
-            <td th:text="${promotion.reduction}">Reduction</td>
+            <td th:text="${promotion.reduction}">Réduction</td>
             <td th:each="produit : ${promotion.produit}" > <span th:text="${produit.nom}"></span></td>
           </tr>
           </tbody>
         </table>
       </div>
-
-
     </div>
+
+    <!--<h1 class="display-4 pb-5 fw-normal">Promotion</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Réduction</th>
+          <th scope="col">Produit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="promotion : ${promotions}">
+          <td th:text="${promotion.id}">ID</td>
+          <td th:text="${promotion.nom}">Nom</td>
+          <td th:text="${promotion.reduction}">Réduction</td>
+          <td th:each="produit : ${promotion.produit}" > <span th:text="${produit.nom}"></span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>-->
   </div>
+</div>
 </div>
 
 <div th:replace="fragments/footer :: footerbar"></div>
