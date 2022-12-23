@@ -46,7 +46,9 @@ public class FindByController {
 
 
     @RequestMapping("/rechercherPar")
-    public String displayPrint() {
+    public String displayPrint(Model model) {
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         return "rechercherPar";
     }
 

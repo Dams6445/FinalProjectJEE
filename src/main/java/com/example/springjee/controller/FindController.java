@@ -62,7 +62,9 @@ public class FindController {
 
 
     @RequestMapping("/rechercher")
-    public String displayRecherche(){
+    public String displayRecherche(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         return "rechercher";
     }
 
