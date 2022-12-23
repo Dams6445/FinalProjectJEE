@@ -74,3 +74,8 @@ supprimer et mise à jour qui vous renveront vers une page ou il sera possible d
 par exemple pour ajouter si vous voulez ajouter une catégorie ou un produit ou une 
 promotion.
 
+[Ajouter](./readme/ajouter.png) 
+[Supprimer](./readme/supprimer.png) 
+[Modifier](./readme/modifier.png) 
+
+
