@@ -75,7 +75,7 @@ public class UpdateController {
         modele.addAttribute("categories", categories);
         modele.addAttribute("categorie", categorie);
         categorieService.updateCategorie(categorie);
-        return "editCategorie";
+        return "validationModification";
     }
 
     @RequestMapping("/updateProduit")
@@ -84,7 +84,7 @@ public class UpdateController {
         modele.addAttribute("categories", categories);
         modele.addAttribute("produit", produit);
         produitService.updateProduit(produit);
-        return "editProduit";
+        return "validationModification";
     }
 
 
@@ -94,6 +94,6 @@ public class UpdateController {
         modele.addAttribute("categories", categories);
         modele.addAttribute("promotion", promotion);
         promotionService.updatePromotion(promotion);
-        return "editPromotion";
+        return "validationModification";
     }
 }

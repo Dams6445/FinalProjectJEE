@@ -64,7 +64,7 @@ class DeleteController {
         model.addAttribute("categories", categories);
         model.addAttribute("categorie",categorie);
         categorieService.deleteCategorieByNom(categorie.getNom());
-        return "deleteCategorie";
+        return "validationSuppression";
     }
     @RequestMapping("/deleteProduit")
     public String afficherDeleteProduit(Model model){
@@ -92,21 +92,21 @@ class DeleteController {
         model.addAttribute("categories", categories);
         model.addAttribute("promotion",promotion);
         promotionService.deletePromotion(promotion.getNom());
-        return "deletePromotion";
+        return "validationSuppression";
     }
 
     @PostMapping("/supprimerProduitParNom")
     public String deleteProduitByNom(@ModelAttribute Produit produit, Model model){
         model.addAttribute("produit",produit);
         produitService.deleteProduitByNom(produit.getNom());
-        return "deleteProduit";
+        return "validationSuppression";
     }
 
     @PostMapping("/supprimerProduitParRef")
     public String deleteProduitByRef(@ModelAttribute Produit produit, Model model){
         model.addAttribute("produit", produit);
         produitService.deleteProduitByReference(produit.getReference());
-        return "deleteProduit";
+        return "validationSuppression";
     }
 
 

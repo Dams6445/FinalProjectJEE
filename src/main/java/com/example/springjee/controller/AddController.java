@@ -70,7 +70,7 @@ public class AddController {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
         categorieService.addCategorie(categorie);
-        return "ajouterCategorie";
+        return "validationAjout";
     }
 
     @PostMapping("/ajoutProduit")
@@ -78,7 +78,7 @@ public class AddController {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
         produitService.addProduit(produit);
-        return  "ajouterProduit";
+        return  "validationAjout";
     }
     @RequestMapping("/ajouterPromotion")
     public String afficherAjouterPromotion(Model model){
@@ -92,6 +92,6 @@ public class AddController {
         model.addAttribute("categories", categories);
         model.addAttribute("promotion", promotion);
         promotionService.addPromotion(promotion);
-        return "ajouterPromotion";
+        return "validationAjout";
     }
 }
