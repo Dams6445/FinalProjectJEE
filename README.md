@@ -8,7 +8,7 @@ Notre site est un site de vente en ligne de la marque Sadida (toute ressemblance
 - [@BAULU  Evan BAUDOIN Cyril BRIOL--DUHALDE Damien](https://github.com/Dams6445/FinalProjectJEE)
 
 ## Fonctionnement de la base de données
-Pour le fonctionnement de la base de données, il faut mettre son identifiant et mot de passe dans le fichier : "/src/main/resources/application.properties".
+Pour le fonctionnement de la base de données, il faut mettre son identifiant et mot de passe SQL dans le fichier : "/src/main/resources/application.properties".
 ```java
 spring.datasource.username= "IdentifiantSQL"
 spring.datasource.password= "MotDePasseSQL"
