@@ -12,29 +12,63 @@
 <div th:replace="fragments/sidebar :: sidebar"></div>
 
 <!--Container Main start-->
+
 <div class="col">
     <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 pb-5 fw-normal">Supprimer un produit</h1>
+            <div class="product-device pt-4 pb-3 d-none d-md-block">
+                <h2 class="pb-2">Supprimer un produit par nom</h2>
 
-            <h1 class="display-4 pb-5 fw-normal">Supprimer un produit par nom</h1>
+                <form th:action="@{/supprimerProduitParNom}" th:object="${produit}" method="post">
+                    <div class="row g-3">
 
-            <form action="#" th:action="@{/supprimerProduitParNom}" th:object="${produit}" method="post">
+                        <div class="col-12">
+                            <label for="nomCategorie" class="form-label">Nom du produit</label>
+                            <input type="text" th:field="${categorie.nom}" class="form-control" id="nomCategorie" placeholder="Nom du produit" required>
+                            <div class="invalid-feedback">
+                                Veuillez saisir un nom valide.
+                            </div>
+                        </div>
 
-                <span>Nom du produit <input type=text th:field="${produit.nom}" class="form_entré"/></span>
+                        <hr class="my-4">
 
-                <span><input type="submit" value="Supprimer"/></span>
-            </form>
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Supprimer</button>
 
-            <h1 class="display-4 pb-5 fw-normal">Supprimer un produit par référence</h1>
+                    </div>
+                </form>
 
-            <form action="#" th:action="@{/supprimerProduitParRef}" th:object="${produit}" method="post">
+            </div>
 
-                <span>Reference du produit <input type=text th:field="${produit.reference}" class="form_entré"/></span>
+            <br>
+            <br>
 
-                <span><input type="submit" value="Supprimer"/></span>
-            </form>
+            <div class="product-device pt-4 pb-3 d-none d-md-block">
+                <h2 class="pb-2">Supprimer un produit par référence</h2>
+
+                <form th:action="@{/supprimerProduitParRef}" th:object="${produit}" method="post">
+                    <div class="row g-3">
+
+                        <div class="col-12">
+                            <label for="nomCategorie" class="form-label">Référence du produit</label>
+                            <input type="text" th:field="${categorie.nom}" class="form-control" id="nomCategorie" placeholder="Référence du produit" required>
+                            <div class="invalid-feedback">
+                                Veuillez saisir un nom valide.
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Supprimer</button>
+
+                    </div>
+                </form>
+
+            </div>
+
         </div>
     </div>
+</div>
 </div>
 
 <div th:replace="fragments/footer :: footerbar"></div>
