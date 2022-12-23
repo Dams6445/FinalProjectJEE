@@ -11,7 +11,7 @@ Notre site est un site de vente en ligne de la marque Sadida (toute ressemblance
 
 ## Fonctionnalité d'ajout
 
-[Documentation](./yeezy.png)
+[Documentation](sadida-removebg-preview.png)
 
 ## Fonctionnalité de suppression
 
