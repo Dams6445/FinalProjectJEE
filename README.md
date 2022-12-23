@@ -63,8 +63,8 @@ ses attributs.
 
 [Rechercher avec un lien](./readme/Recherche_Par_Lien.webm)
 
-Vidéo explicative pour montrer comment rechercher un ou plusieurs éléments en fonction
- de sa catégorie .
+Vidéo explicative pour montrer comment rechercher une ou plusieurs entités en fonction
+ de son lien avec une autre table.
 
 ## Autres fonctionnalitées
 
