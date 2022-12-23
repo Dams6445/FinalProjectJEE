@@ -19,4 +19,7 @@ public interface PromotionRepository extends JpaRepository<Promotion, Integer> {
 
     @Query (" SELECT p FROM  Promotion p WHERE  p.produit.categorie.id = :idCategorie")
     List<Promotion> findPromotionByCategorie(@Param("idCategorie") Integer idCategorie);
+
+    @Query (" SELECT p FROM Promotion p WHERE p.produit.id = :idProduit")
+    List<Promotion> findPromotionByProduit(@Param("idProduit") Integer idProduit);
 }
