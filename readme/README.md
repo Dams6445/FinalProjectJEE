@@ -11,28 +11,49 @@ Notre site est un site de vente en ligne de la marque Sadida (toute ressemblance
 
 ## Fonctionnalité d'ajout
 
-[Documentation](./yeezy.png)
+[Ajout](./yeezy.png)
+
+Vidéo explicative pour montrer comment ajouter un élément 
+(catégorie, produit ou promotion) à la base de données.
 
 ## Fonctionnalité de suppression
 
-[Documentation](https://linktodocumentation)
+[Suppression](https://google.com)
+
+Vidéo explicative pour montrer comment supprimer un élément 
+(catégorie, produit ou promotion) à la base de données.
 
 ## Fonctionnalité de mise à jour
 
-[Documentation](https://linktodocumentation)
+[Mise à jour](https://linktodocumentation)
+
+Vidéo explicative pour montrer comment mettre à jour un élément
+ (catégorie, produit ou promotion) à la base de données.
 
 ## Affichage des données
 
-[Documentation](https://linktodocumentation)
+[Données](https://linktodocumentation)
+
+Vidéo explicative pour montrer comment afficher tous les éléments de la base de données.
 
 ## Rechercher des éléments
 
-[Documentation](https://linktodocumentation)
+[Rechercher](https://linktodocumentation)
+
+Vidéo explicative pour montrer comment rechercher un ou plusieurs éléments par un de 
+ses attributs.
 
 ## Rechercher des éléments par catégorie
 
-[Documentation](https://linktodocumentation)
-## Screenshots
+[Rechercher par catégorie](https://linktodocumentation)
 
-![App Screenshot](/yeezy.png)
+Vidéo explicative pour montrer comment rechercher un ou plusieurs éléments en fonction
+ de sa catégorie .
 
+## Autres fonctionnalitées
+
+Dans la barre de navigation situé a gauche de l'écran il est possible d'aller 
+dans "Gestion" puis "Gestion des données" afin d'accéder à des pages tel  que ajouter, 
+supprimer et mise à jour qui vous renveront vers une page ou il sera possible de choisir 
+par exemple pour ajouter si vous voulez ajouter une catégorie ou un produit ou une 
+promotion.
