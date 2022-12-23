@@ -21,45 +21,47 @@ Toutes les images qui sont utilisées pour le fonctionnement de l'application do
 
 ## Fonctionnalité d'ajout   
 
-[Ajout de Produit](./Ajouter_Produit.webm)          
-[Ajout de Catégorie](./Ajouter_Categorie.webm)   
-[Ajout de Promotion](./Ajouter_Promotion.webm)   
+[Ajout de Catégorie](./readme/Ajouter_Categorie.webm)   
+[Ajout de Produit](./readme/Ajouter_Produit.webm)          
+[Ajout de Promotion](./readme/Ajouter_Promotion.webm)   
 
 Vidéo explicative pour montrer comment ajouter une entité 
 (catégorie, produit ou promotion) à la base de données.
 
 ## Fonctionnalité de suppression
 
-[Supprimer un Produit](./Supprimer_Produit.webm)          
-[Supprimer une Catégorie](./Supprimer_Categorie.webm)   
-[Supprimer une Promotion](./Supprimer_Promotion.webm)   
+[Supprimer une Catégorie](./readme/Supprimer_Categorie.webm)   
+[Supprimer un Produit](./readme/Supprimer_Produit.webm)          
+[Supprimer une Promotion](./readme/Supprimer_Promotion.webm)   
 
 Vidéo explicative pour montrer comment supprimer une entité 
 (catégorie, produit ou promotion) à la base de données.
 
 ## Fonctionnalité de mise à jour
 
-[Mise à jour](https://linktodocumentation/)
+[Modifier une Catégorie](./readme/Modifier_Categorie.webm)   
+[Modifier un Produit](./readme/Modifier_Produit.webm)          
+[Modifier une Promotion](./readme/Modifier_Promotion.webm) 
 
 Vidéo explicative pour montrer comment mettre à jour une entité
  (catégorie, produit ou promotion) à la base de données.
 
 ## Affichage des données
 
-[Données](https://linktodocumentation/)
+[Données](./readme/Afficher_Donnes.webm)
 
 Vidéo explicative pour montrer comment afficher toute les entités de la base de données.
 
 ## Rechercher des éléments
 
-[Rechercher](./Recherche_Entité.webm)
+[Rechercher](./readme/Recherche_Entité.webm)
 
 Vidéo explicative pour montrer comment rechercher une ou plusieurs entités par un de 
 ses attributs.
 
 ## Rechercher des éléments par catégorie
 
-[Rechercher avec un lien](./Recherche_Par_Lien.webm)
+[Rechercher avec un lien](./readme/Recherche_Par_Lien.webm)
 
 Vidéo explicative pour montrer comment rechercher un ou plusieurs éléments en fonction
  de sa catégorie .
