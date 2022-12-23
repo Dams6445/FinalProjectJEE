@@ -55,7 +55,8 @@ public class FindByController {
 
     @PostMapping("/rechercherProduitParCategorie")
     public String displayProduitByCategorie(@ModelAttribute Categorie categorie, Model model){
-        model.addAttribute("categorie",categorie);
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         List<Produit> produits = produitService.getProduitByCategorie(categorieService.getCategorieByNom(categorie.getNom()).getId());
         model.addAttribute("produitsByCategorie", produits);
         return "rechercherPar";
@@ -63,7 +64,8 @@ public class FindByController {
 
     @PostMapping("/rechercherPromotionParCategorie")
     public String displayPromotionByCategorie(@ModelAttribute Categorie categorie, Model model){
-        model.addAttribute("categorie",categorie);
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         List<Promotion> promotions = promotionService.getPromotionByCategoie(categorieService.getCategorieByNom(categorie.getNom()).getId());
         model.addAttribute("promotionsByCategorie", promotions);
         return "rechercherPar";

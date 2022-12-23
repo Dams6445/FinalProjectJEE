@@ -72,6 +72,8 @@ public class FindController {
 
     @PostMapping("/rechercherCategorie")
     public String findCategorie(@ModelAttribute Categorie categorie, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         Categorie categorieTrouve = categorieService.getCategorieByNom(categorie.getNom());
         model.addAttribute("categorieParNom", categorieTrouve);
         return "rechercher";
@@ -81,6 +83,8 @@ public class FindController {
 
     @PostMapping("/rechercherProduitParNom")
     public String findProduitParNom(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         Produit produitTrouve = produitService.getProduitByNom(produit.getNom());
         model.addAttribute("produitParNom", produitTrouve);
         return "rechercher";
@@ -88,6 +92,8 @@ public class FindController {
 
     @PostMapping("/rechercherProduitParRef")
     public String findProduitParRef(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         Produit produitTrouve = produitService.getProduitByRef(produit.getReference());
         model.addAttribute("produitParRef", produitTrouve);
         return "rechercher";
@@ -95,6 +101,8 @@ public class FindController {
 
     @PostMapping("/rechercherProduitParPrix")
     public String findProduitParPrix(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         List<Produit> produits = produitService.getProduitByPrix(produit.getPrix());
         model.addAttribute("produitsParPrix", produits);
         return "rechercher";
@@ -104,6 +112,8 @@ public class FindController {
 
     @PostMapping("/rechercherPromotionParNom")
     public String findPromotionParNom(@ModelAttribute Promotion promotion, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         Promotion promotionTrouve = promotionService.getPromotionByNom(promotion.getNom());
         model.addAttribute("promotionParNom", promotionTrouve);
         return "rechercher";
@@ -111,6 +121,8 @@ public class FindController {
 
     @PostMapping("/rechercherPromotionParPrix")
     public String findPromotionParPrix(@ModelAttribute Promotion promotion, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         List<Promotion> promotions = promotionService.getPromotionByPrix(promotion.getReduction());
         model.addAttribute("promotionsParPrix", promotions);
         return "rechercher";
