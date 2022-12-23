@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 @Controller
 public class UpdateController {
@@ -43,39 +44,56 @@ public class UpdateController {
     }
 
     @RequestMapping("/update")
-    public String update(){
+    public String update(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         return "update";
     }
-/*
+
+    @RequestMapping("/editCategorie")
+    public String afficherEditCategorie(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "editCategorie";
+    }
+    @RequestMapping("/editProduit")
+    public String afficherEditProduit(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "editProduit";
+    }
+    @RequestMapping("/editPromotion")
+    public String afficherEditPromotion(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "editPromotion";
+    }
+
     @RequestMapping("/updateCategorie")
-    public String updateCategorie(@ModelAttribute Categorie categorie, @RequestParam(value = "imageCategorie", required = false) String path, Model modele) throws IOException {
-        if(!("".equals(path))) {
-            String filePath = "./src/main/resources/pictures/" + path;
-            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-            categorie.setImage(bytes);
-        }
+    public String updateCategorie(@ModelAttribute Categorie categorie, Model modele) {
+        List<Categorie> categories = categorieService.getAllCategories();
+        modele.addAttribute("categories", categories);
         modele.addAttribute("categorie", categorie);
         categorieService.updateCategorie(categorie);
-        return "update";
+        return "editCategorie";
     }
 
     @RequestMapping("/updateProduit")
     public String updateProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
-        if(!("".equals(path))) {
-            String filePath = "./src/main/resources/pictures/" + path;
-            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-            produit.setImage(bytes);
-        }
+        List<Categorie> categories = categorieService.getAllCategories();
+        modele.addAttribute("categories", categories);
         modele.addAttribute("produit", produit);
         produitService.updateProduit(produit);
-        return "update";
+        return "editProduit";
     }
 
- */
+
     @RequestMapping("/updatePromotion")
     public String updatePromotion(@ModelAttribute Promotion promotion, Model modele) {
+        List<Categorie> categories = categorieService.getAllCategories();
+        modele.addAttribute("categories", categories);
         modele.addAttribute("promotion", promotion);
         promotionService.updatePromotion(promotion);
-        return "update";
+        return "editPromotion";
     }
 }

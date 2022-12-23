@@ -50,7 +50,7 @@ public class ProduitService {
         if(!("".equals(produit.getDescription()))) {
             produitFromDB.setDescription(produit.getDescription());
         }
-        if(produit.getImage() != null) {
+        if(!("".equals(produit.getImage()))) {
             produitFromDB.setImage(produit.getImage());
         }
         produitRepository.save(produitFromDB);
