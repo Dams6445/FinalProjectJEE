@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -29,7 +30,7 @@ public class ListeController {
     @Autowired
     ProduitService produitService;
 
-    @GetMapping("/lister")
+    @RequestMapping("/lister")
     public String listerLaBase(Model model){
         List<Categorie> categories = categorieService.getAllCategories();
         List<Produit> produits = produitService.getAllProduits();

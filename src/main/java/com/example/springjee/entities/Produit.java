@@ -26,11 +26,7 @@ public class Produit {
     @ManyToOne
     @JoinColumn(name = "categorie",nullable = false)
     private Categorie categorie;
-    /*
-    @ManyToOne
-    @JoinColumn(name = "typeProduit")
-    private TypeProduit typeProduit;
-    */
+
     @Column(name = "produit_description")
     private String description;
 
@@ -52,7 +48,6 @@ public class Produit {
         this.nom = nom;
         this.prix = prix;
         this.categorie = categorie;
-        //this.typeProduit = typeProduit;
         this.description = description;
         this.image = image;
     }
@@ -98,7 +93,7 @@ public class Produit {
         return description;
     }
 
-    public void setDescription(String annee_sortie) { this.description = annee_sortie; }
+    public void setDescription(String description) { this.description = description; }
 
     public byte[] getImage() {
         return image;
@@ -107,12 +102,7 @@ public class Produit {
     public void setImage(byte[] image) {
         this.image = image;
     }
-    /*
-    public TypeProduit getTypeProduit() { return typeProduit; }
 
-    public void setTypeProduit(TypeProduit typeProduit) { this.typeProduit = typeProduit; }
-
-     */
 }
 
 

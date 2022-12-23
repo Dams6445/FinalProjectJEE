@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Produit - Sadida</title>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="fragments/header :: headerbar"></div>
+
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+<!--Container Main start-->
+    <div class="col">
+        <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 pb-5 fw-normal">Ajouter un produit</h1>
+                <form th:action="@{/ajoutProduit}" th:object="${produit}" method="post">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="nomProduit" class="form-label">Nom du produit</label>
+                            <input type="text" th:field="${produit.nom}" class="form-control" id="nomProduit" placeholder="Nom du produit" value="" required>
+                            <div class="invalid-feedback">
+                                Veuillez saisir un nom valide.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="prix" class="form-label">Prix</label>
+                            <div class="input-group has-validation">
+                                <input type="text" th:field="${produit.prix}" class="form-control" id="prix" placeholder="Prix" required>
+                                <span class="input-group-text">€</span>
+                                <div class="invalid-feedback">
+                                    Veuillez saisir un prix valide.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="nomProduit" class="form-label">ID de la catégorie</label>
+                            <input type="text" th:field="${produit.categorie}" class="form-control" id="IDCategorie" placeholder="ID de la catégorie" value="" required>
+                            <div class="invalid-feedback">
+                                Veuillez saisir un nom valide.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="description" class="form-label">Description <span class="text-muted">(Optionelle)</span></label>
+                            <input type="text" th:field="${produit.description}" class="form-control" id="description" placeholder="Description produit">
+                            <div class="invalid-feedback">
+                                Veuillez saisir une description valide.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="reference" class="form-label">Reference</label>
+                            <input type="text" th:field="${produit.reference}" class="form-control" id="reference" placeholder="Ex : AZ-201" required>
+                            <div class="invalid-feedback">
+                                Veuillez saisir une reference valide.
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <button class="w-100 btn btn-primary btn-lg" data-toggle="modal" data-target="#success" type="submit">Ajouter le produit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div th:replace="fragments/footer :: footerbar"></div>
+
+<script type="text/javascript" th:src="@{js/bootstrap.bundle.js}"></script>
+</body>
+</html>
