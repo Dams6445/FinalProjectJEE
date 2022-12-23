@@ -74,6 +74,11 @@ ses attributs.
 Vidéo explicative pour montrer comment rechercher une ou plusieurs entités en fonction
  de son lien avec une autre table.
 
+## Autres documents
+
+Le support utilisé lors de la soutenance est également joint à la repository (sous forme compressée): 
+[SupportSoutenance](./Diapo_SOUTENANCE.tar.xz) 
+
 ## Autres fonctionnalitées
 
 Dans la barre de navigation situé a gauche de l'écran il est possible d'aller 
