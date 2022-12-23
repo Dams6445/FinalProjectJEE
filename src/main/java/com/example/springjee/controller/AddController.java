@@ -52,21 +52,6 @@ public class AddController {
         model.addAttribute("categories", categories);
         return "ajouter";
     }
-    /*
-    @PostMapping("/ajoutProduit")
-    public String ajouterProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
-        if(!("".equals(path))) {
-            String filePath = "./src/main/resources/static/pictures/" + path;
-            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-            produit.setImage(bytes);
-        }
-        List<Categorie> categories = categorieService.getAllCategories();
-        modele.addAttribute("categories", categories);
-        modele.addAttribute("produit", produit);
-        produitService.addProduit(produit);
-        return  "ajouterProduit";
-    }
-*/
     @RequestMapping("/ajouterCategorie")
     public String afficherAjouterCategorie(Model model){
         List<Categorie> categories = categorieService.getAllCategories();
@@ -80,7 +65,6 @@ public class AddController {
         return "ajouterProduit";
     }
 
-
     @PostMapping("/ajoutCategorie")
     public String ajouterCategorie(@ModelAttribute Categorie categorie, Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
@@ -89,21 +73,6 @@ public class AddController {
         return "ajouterCategorie";
     }
 
-/*
-    @PostMapping("/ajoutCategorie")
-    public String ajouterCategorie(@ModelAttribute Categorie categorie,@RequestParam(value = "image", required = false) String path, Model modele) throws IOException {
-        List<Categorie> categories = categorieService.getAllCategories();
-        modele.addAttribute("categories", categories);
-        if(!("".equals(path))) {
-            String filePath = "./src/main/resources/static/pictures/" + path;
-            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-            categorie.setImage(bytes);
-        }
-        modele.addAttribute("categorie", categorie);
-        categorieService.addCategorie(categorie);
-        return "ajouterCategorie";
-    }
-*/
     @PostMapping("/ajoutProduit")
     public String ajouterProduit(@ModelAttribute Produit produit, Model model){
         List<Categorie> categories = categorieService.getAllCategories();
@@ -112,13 +81,18 @@ public class AddController {
         produitService.addProduit(produit);
         return  "ajouterProduit";
     }
-
-    @PostMapping("/ajouterPromotion")
-    public String ajouterCategorie(@ModelAttribute Promotion promotion, Model model) {
+    @RequestMapping("/ajouterPromotion")
+    public String afficherAjouterPromotion(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "ajouterPromotion";
+    }
+    @PostMapping("/ajoutPromotion")
+    public String ajouterPromotion(@ModelAttribute Promotion promotion, Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
         model.addAttribute("promotion", promotion);
         promotionService.addPromotion(promotion);
-        return "ajouter";
+        return "ajouterPromotion";
     }
 }

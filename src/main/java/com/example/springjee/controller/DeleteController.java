@@ -51,33 +51,64 @@ class DeleteController {
         return "supprimer";
     }
 
+    @RequestMapping("/deleteCategorie")
+    public String afficherDeleteCategorie(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "deleteCategorie";
+    }
+
     @PostMapping("/supprimerCategorie")
     public String deleteCategorie(@ModelAttribute Categorie categorie, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
         model.addAttribute("categorie",categorie);
         categorieService.deleteCategorieByNom(categorie.getNom());
-        return "supprimer";
+        return "deleteCategorie";
+    }
+    @RequestMapping("/deleteProduit")
+    public String afficherDeleteProduit(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "deleteProduit";
+    }
+
+    @PostMapping("/supprimerProduit")
+    public String deleteProduit(@ModelAttribute Produit produit, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        model.addAttribute("produit",produit);
+        return "deleteProduit";
+    }
+    @RequestMapping("/deletePromotion")
+    public String afficherDeletePromotion(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "deletePromotion";
+    }
+    @PostMapping("/supprimerPromotion")
+    public String deletePromotion(@ModelAttribute Promotion promotion, Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        model.addAttribute("promotion",promotion);
+        promotionService.deletePromotion(promotion.getNom());
+        return "deletePromotion";
     }
 
     @PostMapping("/supprimerProduitParNom")
     public String deleteProduitByNom(@ModelAttribute Produit produit, Model model){
         model.addAttribute("produit",produit);
         produitService.deleteProduitByNom(produit.getNom());
-        return "supprimer";
+        return "deleteProduit";
     }
 
     @PostMapping("/supprimerProduitParRef")
     public String deleteProduitByRef(@ModelAttribute Produit produit, Model model){
         model.addAttribute("produit", produit);
         produitService.deleteProduitByReference(produit.getReference());
-        return "supprimer";
+        return "deleteProduit";
     }
 
-    @PostMapping("/supprimerPromotion")
-    public String deletePromotion(@ModelAttribute Promotion promotion, Model model){
-        model.addAttribute("promotion",promotion);
-        promotionService.deletePromotion(promotion.getNom());
-        return "supprimer";
-    }
 
 
 }
