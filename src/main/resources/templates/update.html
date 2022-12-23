@@ -16,6 +16,7 @@
                     <form action="#" th:action="@{/updateCategorie}" th:object="${categorie}" method="post">
                         <p>ID de la categorie <input type=text th:field="${categorie.id}" class="form_entré"/></p>
                         <p>Nom de la categorie <input type=text th:field="${categorie.nom}" class="form_entré"/></p>
+                        <input type="file" id="image" name="image" th:name="imageCategorie" accept="image/png, image/jpeg">
                         <p><input type="submit" value="Submit"/></p>
                     </form>
 
@@ -28,6 +29,7 @@
                         <p>Categorie du produit <input type=text th:field="${produit.categorie}" class="form_entré"/></p>
                         <!-- <p>Type du produit <input type=text th:field="${produit.typeProduit}" class="form_entré"/></p> -->
                         <p>Description du Produit <input type=text th:field="${produit.description}" class="form_entré"/></p>
+                        <input type="file" id="image" name="image" th:name="imageProduit" accept="image/png, image/jpeg">
                         <p><input type="submit" value="Submit"/></p>
                     </form>
 

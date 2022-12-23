@@ -33,9 +33,15 @@ public class PromotionService {
     public void updatePromotion(Promotion promotion) {
         Promotion promotionFromDB = promotionRepository.findById(promotion.getId())
                 .orElse(new Promotion(promotion.getNom(), promotion.getReduction(), promotion.getProduit()));
-        promotionFromDB.setReduction(promotion.getReduction());
-        promotionFromDB.setProduit(promotion.getProduit());
-        promotionFromDB.setNom(promotion.getNom());
+        if(!("".equals(promotion.getNom()))) {
+            promotionFromDB.setNom(promotion.getNom());
+        }
+        if(promotion.getProduit() != null) {
+            promotionFromDB.setProduit(promotion.getProduit());
+        }
+        if(promotion.getReduction() != null) {
+            promotionFromDB.setReduction(promotion.getReduction());
+        }
         promotionRepository.save(promotionFromDB);
     }
 }

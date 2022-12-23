@@ -12,6 +12,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import java.util.List;
 
 @Controller
@@ -44,7 +52,17 @@ public class AddController {
         model.addAttribute("categories", categories);
         return "ajouter";
     }
-
+/*
+    @PostMapping("/ajouterProduit")
+    public String ajouterProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
+        String filePath = "./src/main/resources/pictures/" + path;
+        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+        produit.setImage(bytes);
+        modele.addAttribute("produit", produit);
+        produitService.addProduit(produit);
+        return  "ajouter";
+    }
+*/
     @RequestMapping("/ajouterCategorie")
     public String afficherAjouterCategorie(Model model){
         List<Categorie> categories = categorieService.getAllCategories();
@@ -64,9 +82,18 @@ public class AddController {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
         model.addAttribute("categorie", categorie);
-        categorieService.addCategorie(categorie);
         return "ajouterCategorie";
     }
+     /*
+    @PostMapping("/ajouterCategorie")
+    public String ajouterCategorie(@ModelAttribute Categorie categorie,@RequestParam(value = "image", required = false) String path, Model modele) throws IOException {
+        String filePath = "./src/main/resources/pictures/" + path;
+        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+        categorie.setImage(bytes);
+        modele.addAttribute("categorie", categorie);
+        categorieService.addCategorie(categorie);
+        return "ajouterCategorie";
+    }*/
 
     @PostMapping("/ajoutProduit")
     public String ajouterProduit(@ModelAttribute Produit produit, Model model){

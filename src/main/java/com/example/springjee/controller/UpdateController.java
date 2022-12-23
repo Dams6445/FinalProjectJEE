@@ -9,10 +9,11 @@ import com.example.springjee.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @Controller
 public class UpdateController {
@@ -47,13 +48,23 @@ public class UpdateController {
     }
 
     @RequestMapping("/updateCategorie")
-    public String updateCategorie(@ModelAttribute Categorie categorie, Model modele) {
+    public String updateCategorie(@ModelAttribute Categorie categorie, @RequestParam(value = "imageCategorie", required = false) String path, Model modele) throws IOException {
+        if(!("".equals(path))) {
+            String filePath = "./src/main/resources/pictures/" + path;
+            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+            categorie.setImage(bytes);
+        }
         modele.addAttribute("categorie", categorie);
         categorieService.updateCategorie(categorie);
         return "update";
     }
     @RequestMapping("/updateProduit")
-    public String updateProduit(@ModelAttribute Produit produit, Model modele) {
+    public String updateProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
+        if(!("".equals(path))) {
+            String filePath = "./src/main/resources/pictures/" + path;
+            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+            produit.setImage(bytes);
+        }
         modele.addAttribute("produit", produit);
         produitService.updateProduit(produit);
         return "update";

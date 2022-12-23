@@ -31,7 +31,7 @@ public class Produit {
     private String description;
 
     @Column(name = "produit_image")
-    private ImageType image;
+    private byte[] image;
 
 
     /////////////////////////////
@@ -43,7 +43,7 @@ public class Produit {
     }
 
     public Produit(String reference, String nom, Float prix, Categorie categorie,
-                   String description, ImageType image){
+                   String description, byte[] image){
         this.reference = reference;
         this.nom = nom;
         this.prix = prix;
@@ -95,11 +95,11 @@ public class Produit {
 
     public void setDescription(String description) { this.description = description; }
 
-    public ImageType getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(ImageType image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
