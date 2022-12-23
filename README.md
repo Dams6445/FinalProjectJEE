@@ -1,6 +1,6 @@
 # Projet de developpement web JEE
 
-Notre site est un site de vente en ligne de la marque Sadida (toute ressemblance avec une marque existante est totalement fortuite).
+Notre site est un site de vente en ligne de la marque Sadida, nous avons principalement géré la partie admnistrateur (impossible d'acheter), de ce fait nous n'avons pas jugé utile de créer des profils clients et admninistrateur ayant des droits sur la gestion du site.
 
 
 ## Authors
