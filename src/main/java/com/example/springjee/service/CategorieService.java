@@ -38,7 +38,7 @@ public class CategorieService {
         if(!("".equals(categorie.getNom()))) {
             categorieFromDB.setNom(categorie.getNom());
         }
-        if(categorie.getImage() != null) {
+        if(!("".equals(categorie.getImage()))) {
             categorieFromDB.setImage(categorie.getImage());
         }
         categorieRepository.save(categorieFromDB);

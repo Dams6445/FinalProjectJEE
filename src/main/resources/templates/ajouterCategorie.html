@@ -22,6 +22,7 @@
           <div class="col-12">
             <label for="nomCategorie" class="form-label">Nom de la catégorie</label>
             <input type="text" th:field="${categorie.nom}" class="form-control" id="nomCategorie" placeholder="nom de la catégorie" value="" required>
+            <input type="file" id="image" name="image" th:field="${categorie.image}" accept="image/png, image/jpeg">
             <div class="invalid-feedback">
               Veuillez saisir un nom valide.
             </div>

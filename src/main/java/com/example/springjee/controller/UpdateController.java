@@ -46,7 +46,7 @@ public class UpdateController {
     public String update(){
         return "update";
     }
-
+/*
     @RequestMapping("/updateCategorie")
     public String updateCategorie(@ModelAttribute Categorie categorie, @RequestParam(value = "imageCategorie", required = false) String path, Model modele) throws IOException {
         if(!("".equals(path))) {
@@ -58,6 +58,7 @@ public class UpdateController {
         categorieService.updateCategorie(categorie);
         return "update";
     }
+
     @RequestMapping("/updateProduit")
     public String updateProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
         if(!("".equals(path))) {
@@ -69,6 +70,8 @@ public class UpdateController {
         produitService.updateProduit(produit);
         return "update";
     }
+
+ */
     @RequestMapping("/updatePromotion")
     public String updatePromotion(@ModelAttribute Promotion promotion, Model modele) {
         modele.addAttribute("promotion", promotion);
