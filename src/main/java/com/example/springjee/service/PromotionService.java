@@ -22,6 +22,20 @@ public class PromotionService {
 
     public List<Promotion> getPromotionByPrix(Float prix) { return  promotionRepository.findPromotionByPrix(prix);}
 
+    public float getPromotionbyProduit(Produit produit){
+        float reduc = 0;
+        List<Promotion> listPromo = promotionRepository.findPromotionByProduit(produit.getId());
+        for(Promotion promo : listPromo) {
+            reduc = reduc + promo.getReduction();
+        }
+        float prixReduit = produit.getPrix() - reduc;
+        if(prixReduit < 0) {
+            return 0;
+        }else {
+            return prixReduit;
+        }
+    }
+
     public void addPromotion(Promotion promotion){ promotionRepository.save(new Promotion(promotion.getNom(), promotion.getReduction(), promotion.getProduit())); }
 
     public void deletePromotionByNom(String nom) { promotionRepository.delete(promotionRepository.findPromotionByNom(nom));}

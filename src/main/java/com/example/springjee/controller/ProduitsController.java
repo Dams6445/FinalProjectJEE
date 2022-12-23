@@ -4,6 +4,7 @@ import com.example.springjee.entities.Categorie;
 import com.example.springjee.entities.Produit;
 import com.example.springjee.service.CategorieService;
 import com.example.springjee.service.ProduitService;
+import com.example.springjee.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,9 @@ public class ProduitsController {
     @Autowired
     ProduitService produitService;
 
+    @Autowired
+    PromotionService promotionService;
+
     @ModelAttribute("categorie")
     public Categorie categorie() {
         return new Categorie();
@@ -35,15 +39,19 @@ public class ProduitsController {
     public String displayHome(@RequestParam Integer idCategorie,Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
+        List<Produit> produits;
         if ( idCategorie == 0){
-            List<Produit> produits = produitService.getAllProduits();
-            model.addAttribute("produits", produits);
+            produits = produitService.getAllProduits();
         }
         else {
-            List<Produit> produits = produitService.getProduitByCategorie(idCategorie);
-            model.addAttribute("produits", produits);
+            produits = produitService.getProduitByCategorie(idCategorie);
         }
-
+        float prix;
+        for(Produit produit : produits){
+            prix = promotionService.getPromotionbyProduit(produit);
+            produit.setPrix(prix);
+        }
+        model.addAttribute("produits", produits);
         return "produits";
     }
 
