@@ -77,11 +77,18 @@ public class AddController {
         return "ajouterProduit";
     }
 
+    @RequestMapping("/ajouterPromotion")
+    public String afficherAjouterPromotion(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "ajouterPromotion";
+    }
+
     @PostMapping("/ajoutCategorie")
     public String ajouterCategorie(@ModelAttribute Categorie categorie, Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
-        model.addAttribute("categorie", categorie);
+        categorieService.addCategorie(categorie);
         return "ajouterCategorie";
     }
      /*
@@ -99,17 +106,17 @@ public class AddController {
     public String ajouterProduit(@ModelAttribute Produit produit, Model model){
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
-        model.addAttribute("produit", produit);
         produitService.addProduit(produit);
         return  "ajouterProduit";
     }
 
-    @PostMapping("/ajouterPromotion")
+
+    @PostMapping("/ajoutPromotion")
     public String ajouterCategorie(@ModelAttribute Promotion promotion, Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
         model.addAttribute("promotion", promotion);
         promotionService.addPromotion(promotion);
-        return "ajouter";
+        return "ajouterPromotion";
     }
 }

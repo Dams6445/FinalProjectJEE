@@ -38,4 +38,17 @@ public class ListeController {
 
         return "lister";
     }
+
+    @RequestMapping("/donnees")
+    public String listerLesDonnes(Model model){
+        List<Categorie> categories = categorieService.getAllCategories();
+        List<Produit> produits = produitService.getAllProduits();
+        List<Promotion> promotions = promotionService.getAllPromotions();
+
+        model.addAttribute("categories", categories);
+        model.addAttribute("promotions", promotions);
+        model.addAttribute("produits", produits);
+
+        return "donnees";
+    }
 }
