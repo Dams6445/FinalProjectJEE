@@ -2,7 +2,7 @@
 <html lang="fr" xmlns:th="http://www.thymleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Ajouter Produit - Sadida</title>
+  <title>Sadida - Ajouter Categorie</title>
   <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
 </head>
 <body>
@@ -20,7 +20,7 @@
       <form th:action="@{/ajoutCategorie}" th:object="${categorie}" method="post">
         <div class="row g-3">
           <div class="col-12">
-            <label for="nomCategorie" class="form-label">ID de la catégorie</label>
+            <label for="nomCategorie" class="form-label">Nom de la catégorie</label>
             <input type="text" th:field="${categorie.nom}" class="form-control" id="nomCategorie" placeholder="nom de la catégorie" value="" required>
             <input type="file" id="image" name="image" th:field="${categorie.image}" accept="image/png, image/jpeg">
             <div class="invalid-feedback">

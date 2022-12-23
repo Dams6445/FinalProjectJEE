@@ -51,6 +51,38 @@
                                 </ul>
                             </div>
                         </ul>
+
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#adminPromotion-collapse" aria-expanded="false">
+                                Gestion Promotions
+                            </button>
+                            <div class="collapse" id="adminPromotion-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                                    <li><a th:href="@{/ajouterPromotion}" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter une promotion</a></li>
+                                    <li><a th:href="@{/deleteProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer une promotion</a></li>
+                                    <li><a th:href="@{/editProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Modifier une promotion</a></li>
+                                    <li class="border-top my-1"></li>
+                                </ul>
+                            </div>
+                        </ul>
+
+                        <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                            <button class="btn dropdown-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#adminDonnees-collapse" aria-expanded="false">
+                                Gestion Données
+                            </button>
+                            <div class="collapse" id="adminDonnees-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal ps-4 small">
+                                    <li><a th:href="@{/ajouter}" class="link-dark d-inline-flex text-decoration-none rounded">Ajouter</a></li>
+                                    <li><a th:href="@{/deleteProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Supprimer</a></li>
+                                    <li><a th:href="@{/editProduit}" class="link-dark d-inline-flex text-decoration-none rounded">Modifier</a></li>
+                                    <li><a th:href="@{/donnees}" class="link-dark d-inline-flex text-decoration-none rounded">Afficher</a></li>
+                                    <li><a th:href="@{/rechercher}" class="link-dark d-inline-flex text-decoration-none rounded">Rechercher</a></li>
+                                    <li><a th:href="@{/rechercherPar}" class="link-dark d-inline-flex text-decoration-none rounded">Rechercher par</a></li>
+
+                                    <li class="border-top my-1"></li>
+                                </ul>
+                            </div>
+                        </ul>
                     </div>
                 </li>
             </ul>

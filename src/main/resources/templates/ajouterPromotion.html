@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sadida - Ajouter Promotion</title>
+  <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="fragments/header :: headerbar"></div>
+
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+<!--Container Main start-->
+<div class="col">
+  <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+
+      <h1 class="display-4 pb-5 fw-normal">Ajouter une promotion</h1>
+      <form th:action="@{/ajoutPromotion}" th:object="${promotion}" method="post">
+
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="nomPromotion" class="form-label">Nom de la promotion</label>
+            <input type="text" th:field="${promotion.nom}" class="form-control" id="nomPromotion" placeholder="Nom de la promotion" value="" required>
+            <div class="invalid-feedback">
+              Veuillez saisir un nom valide.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="reductionPromotion" class="form-label">Reduction</label>
+            <div class="input-group has-validation">
+              <input type="text" th:field="${promotion.reduction}" class="form-control" id="reductionPromotion" placeholder="Reduction de la promotion" required>
+              <span class="input-group-text">€</span>
+              <div class="invalid-feedback">
+                Veuillez saisir un prix valide.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="nomPromotion" class="form-label">ID du produit</label>
+            <input type="text" th:field="${promotion.produit}" class="form-control" id="produitPromotion" placeholder="ID du produit" value="" required>
+            <div class="invalid-feedback">
+              Veuillez saisir un nom valide.
+            </div>
+          </div>
+
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" data-toggle="modal" data-target="#success" type="submit">Ajouter la promotion</button>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div th:replace="fragments/footer :: footerbar"></div>
+
+<script type="text/javascript" th:src="@{js/bootstrap.bundle.js}"></script>
+</body>
+</html>
