@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sadida - Rechercher Par</title>
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div th:replace="fragments/header :: headerbar"></div>
+
+<div th:replace="fragments/sidebar :: sidebar"></div>
+
+
+<!--Container Main start-->
+<div class="col">
+    <h1 class="display-4 pb-5 fw-normal">Rechrcher un produit par catégorie</h1>
+
+    <form action="#" th:action="@{/rechercherProduitParCategorie}" th:object="${produitByCategorie}" method="post">
+
+        <p>Nom de la categorie <input type=text th:field="${produitByCategorie.nom}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Rechercher"/></p>
+    </form>
+
+
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Reference</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Categorie</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tr>
+            <tr th:each="produitByCategorie : ${produitsByCategorie}">
+                <td th:text="${produitByCategorie.id}">ID</td>
+                <td th:text="${produitByCategorie.reference}">reference</td>
+                <td th:text="${produitByCategorie.nom}">Nom</td>
+                <td th:each="categorie : ${produitByCategorie.categorie}" > <span th:text="${categorie.nom}"></span></td>
+                <td th:text="${produitByCategorie.prix}">Prix</td>
+                <td th:text="${produitByCategorie.description}">Description</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <h1 class="display-4 pb-5 fw-normal">Rechrcher une promotion par catégorie</h1>
+
+    <form action="#" th:action="@{/rechercherPromotionParCategorie}" th:object="${promotionByCategorie}" method="post">
+
+        <p>Nom de la categorie <input type=text th:field="${promotionByCategorie.nom}" class="form_entré"/></p>
+
+        <p><input type="submit" value="Rechercher"/></p>
+    </form>
+
+
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Produit</th>
+                <th scope="col">Réduction</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tr>
+            <tr th:each="promotionByCategorie : ${promotionsByCategorie}">
+                <td th:text="${promotionByCategorie.id}">ID</td>
+                <td th:text="${promotionByCategorie.nom}">Nom</td>
+                <td th:each="produit : ${promotionByCategorie.produit}" > <span th:text="${produit.nom}"></span></td>
+                <td th:text="${promotionByCategorie.reduction}">Prix</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>
+
+<div th:replace="fragments/footer :: footerbar"></div>
+
+<script type="text/javascript" th:src="@{js/bootstrap.bundle.js}"></script>
+</body>
+</html>

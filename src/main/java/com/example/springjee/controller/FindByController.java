@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-public class FindInController {
+public class FindByController {
 
     @Autowired
     ProduitService produitService;
@@ -45,9 +45,9 @@ public class FindInController {
     }
 
 
-    @RequestMapping("/rechercherParmi")
+    @RequestMapping("/rechercherPar")
     public String displayPrint() {
-        return "rechercherParmi";
+        return "rechercherPar";
     }
 
 
@@ -56,7 +56,7 @@ public class FindInController {
         model.addAttribute("categorie",categorie);
         List<Produit> produits = produitService.getProduitByCategorie(categorieService.getCategorieByNom(categorie.getNom()).getId());
         model.addAttribute("produitsByCategorie", produits);
-        return "rechercherParmi";
+        return "rechercherPar";
     }
 
     @PostMapping("/rechercherPromotionParCategorie")
@@ -64,7 +64,7 @@ public class FindInController {
         model.addAttribute("categorie",categorie);
         List<Promotion> promotions = promotionService.getPromotionByCategoie(categorieService.getCategorieByNom(categorie.getNom()).getId());
         model.addAttribute("promotionsByCategorie", promotions);
-        return "rechercherParmi";
+        return "rechercherPar";
     }
 
 }
