@@ -52,15 +52,19 @@ public class AddController {
         model.addAttribute("categories", categories);
         return "ajouter";
     }
-/*
-    @PostMapping("/ajouterProduit")
+    /*
+    @PostMapping("/ajoutProduit")
     public String ajouterProduit(@ModelAttribute Produit produit, @RequestParam(value = "imageProduit", required = false) String path, Model modele) throws IOException {
-        String filePath = "./src/main/resources/pictures/" + path;
-        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-        produit.setImage(bytes);
+        if(!("".equals(path))) {
+            String filePath = "./src/main/resources/static/pictures/" + path;
+            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+            produit.setImage(bytes);
+        }
+        List<Categorie> categories = categorieService.getAllCategories();
+        modele.addAttribute("categories", categories);
         modele.addAttribute("produit", produit);
         produitService.addProduit(produit);
-        return  "ajouter";
+        return  "ajouterProduit";
     }
 */
     @RequestMapping("/ajouterCategorie")
@@ -69,7 +73,6 @@ public class AddController {
         model.addAttribute("categories", categories);
         return "ajouterCategorie";
     }
-
     @RequestMapping("/ajouterProduit")
     public String afficherAjouterProduit(Model model){
         List<Categorie> categories = categorieService.getAllCategories();
@@ -77,24 +80,30 @@ public class AddController {
         return "ajouterProduit";
     }
 
+
     @PostMapping("/ajoutCategorie")
     public String ajouterCategorie(@ModelAttribute Categorie categorie, Model model) {
         List<Categorie> categories = categorieService.getAllCategories();
         model.addAttribute("categories", categories);
-        model.addAttribute("categorie", categorie);
+        categorieService.addCategorie(categorie);
         return "ajouterCategorie";
     }
-     /*
-    @PostMapping("/ajouterCategorie")
+
+/*
+    @PostMapping("/ajoutCategorie")
     public String ajouterCategorie(@ModelAttribute Categorie categorie,@RequestParam(value = "image", required = false) String path, Model modele) throws IOException {
-        String filePath = "./src/main/resources/pictures/" + path;
-        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-        categorie.setImage(bytes);
+        List<Categorie> categories = categorieService.getAllCategories();
+        modele.addAttribute("categories", categories);
+        if(!("".equals(path))) {
+            String filePath = "./src/main/resources/static/pictures/" + path;
+            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+            categorie.setImage(bytes);
+        }
         modele.addAttribute("categorie", categorie);
         categorieService.addCategorie(categorie);
         return "ajouterCategorie";
-    }*/
-
+    }
+*/
     @PostMapping("/ajoutProduit")
     public String ajouterProduit(@ModelAttribute Produit produit, Model model){
         List<Categorie> categories = categorieService.getAllCategories();

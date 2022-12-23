@@ -24,12 +24,12 @@ public class Categorie {
     private String nom;
 
     @Column(name = "categorie_image")
-    private byte[] image;
+    private String image;
 
     public Categorie(){
     }
 
-    public Categorie(String nom, byte[] image) {
+    public Categorie(String nom, String image) {
         this.nom = nom;
         this.image = image;
     }
@@ -54,11 +54,11 @@ public class Categorie {
         this.nom = nom;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }
