@@ -25,7 +25,7 @@
 
                         <div class="col-12">
                             <label for="nomCategorie" class="form-label">Nom du produit</label>
-                            <input type="text" th:field="${categorie.nom}" class="form-control" id="nomCategorie" placeholder="Nom du produit" required>
+                            <input type="text" th:field="${produit.nom}" class="form-control" id="nomCategorie" placeholder="Nom du produit" required>
                             <div class="invalid-feedback">
                                 Veuillez saisir un nom valide.
                             </div>
@@ -50,8 +50,8 @@
                     <div class="row g-3">
 
                         <div class="col-12">
-                            <label for="nomCategorie" class="form-label">Référence du produit</label>
-                            <input type="text" th:field="${categorie.nom}" class="form-control" id="nomCategorie" placeholder="Référence du produit" required>
+                            <label for="referenceCategorie" class="form-label">Référence du produit</label>
+                            <input type="text" th:field="${produit.reference}" class="form-control" id="referenceCategorie" placeholder="Référence du produit" required>
                             <div class="invalid-feedback">
                                 Veuillez saisir un nom valide.
                             </div>
