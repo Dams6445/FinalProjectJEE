@@ -73,17 +73,17 @@
                             </div>
                         </div>
                         <hr class="my-4">
-                        <button class="w-100 btn btn-primary btn-lg" data-toggle="modal" data-target="#success" type="submit">Ajouter le produit</button>
-                        <div class="modal modal-alert position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalChoice">
-                            <div class="modal-dialog" role="document">
+                        <button type="submit" class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#success">Ajouter le produit</button>
+                        <div class="modal fade" tabindex="-1" role="dialog" id="success">
+                            <div class="modal-dialog">
                                 <div class="modal-content rounded-3 shadow">
                                     <div class="modal-body p-4 text-center">
                                         <h5 class="mb-0">Ajout réussi</h5>
                                         <p class="mb-0">Votre ajout a bien été effectué, veuillez poursuivre votre navigation</p>
                                     </div>
                                     <div class="modal-footer flex-nowrap p-0">
-                                        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end"><strong>Accueil</strong></button>
-                                        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">Nouvel ajout</button>
+                                        <button type="button" th:href="@{/index}" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end"><strong>Accueil</strong></button>
+                                        <button type="button" th:href="@{/addProduit}" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">Nouvel ajout</button>
                                     </div>
                                 </div>
                             </div>
